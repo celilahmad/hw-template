@@ -36,7 +36,7 @@ public class Numbers {
 
             }
         }
-        System.out.println("Congratulations, " + name);
+        System.out.println("Congratulations, number is " + name);
 
         int[] wrongArray = new int[wrongNumbers];
 
