@@ -42,6 +42,7 @@ public class Numbers {
 
         System.arraycopy(array, 1, wrongArray, 0, wrongNumbers);
         Arrays.sort(wrongArray);
+
         System.out.println("Your numbers " + Arrays.toString(wrongArray));
     }
 }
