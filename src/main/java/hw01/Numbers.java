@@ -8,35 +8,41 @@ public class Numbers {
 
         int[] array = new int[100];
         int number = (int) (Math.random() * 100);
-        int name = 0;
+        String name="";
+        int guess = 0;
         int wrongNumbers = 0;
+
 
         System.out.println("Let the game begin");
 
+
+
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your name");
+        name=sc.nextLine();
         System.out.println("Guess the number between 0-100");
 
 
-        while (name != number) {
+        while (guess != number) {
             wrongNumbers++;
-            name = sc.nextInt();
-            if(name>=0 && name<=100) {
-                if (name > number) {
+            guess = sc.nextInt();
+            if(guess>=0 && guess<=100) {
+                if (guess > number) {
                     System.out.println("Your number is too big. Please, try again.");
 
 
-                } else if (name < number) {
+                } else if (guess < number) {
                     System.out.println("Your number is too small. Please, try again.");
 
                 }
 
-                array[wrongNumbers] = name;
+                array[wrongNumbers] = guess;
             }else{
                 System.out.println("Please enter numbers range 0-100");
 
             }
         }
-        System.out.println("Congratulations, number is " + name);
+        System.out.println("Congratulations, " + name);
 
         int[] wrongArray = new int[wrongNumbers];
 
