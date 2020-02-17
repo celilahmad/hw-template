@@ -14,8 +14,8 @@ public class ShootingSquare {
         System.out.println();
         for (int i = 0; i < box.length; i++) {
             for (int j = 0; j < box[i].length; j++) {
-                box[i][j] = " - ";
-                System.out.print(" - ");
+                box[i][j] = " - |";
+                System.out.print(" - |");
             }
             System.out.println();
         }
@@ -27,14 +27,14 @@ public class ShootingSquare {
 
         while (guessed) {
 
-            box[rl][rc] = " x ";
+            box[rl][rc] = " x |";
             System.out.println("Enter row and column");
             guessedRow = sc.nextInt() - 1;
             //System.out.println("Enter column");
             guessedCol = sc.nextInt() - 1;
 
 
-            if (box[guessedRow][guessedCol] == " x ") {
+            if (box[guessedRow][guessedCol] == " x |") {
                 for (int i = 0; i < box.length; i++) {
                     for (int j = 0; j < box[i].length; j++) {
                         System.out.print(box[i][j]);
@@ -45,8 +45,8 @@ public class ShootingSquare {
                 guessed = false;
 
             } else {
-                box[guessedRow][guessedCol] = " * ";
-                box[rl][rc] = " - ";
+                box[guessedRow][guessedCol] = " * |";
+                box[rl][rc] = " - |";
                 for (int i = 0; i < box.length; i++) {
                     for (int j = 0; j < box[i].length; j++) {
                         System.out.print(box[i][j]);
