@@ -1,5 +1,7 @@
 package hw05;
 
+
+
 import java.util.Arrays;
 
 public class Family {
@@ -8,6 +10,9 @@ public class Family {
     private Human father;
     private Human[] children;
     private Pet pet;
+
+    public Family() {
+    }
 
     public Family(Human mother, Human father) {
         this.mother = mother;
@@ -21,10 +26,16 @@ public class Family {
 
     }
 
-    /*public boolean deleteChild(int[] human){
-        if (human.)
-        return true;
-    }*/
+    public String deleteChild(int[] human, String deleteChild){
+        int[] newArray = new int[children.length-1];
+
+        for (int items : human) {
+            if (!deleteChild.equals(items)){
+                System.arraycopy(human,1,newArray,0,items);
+            }
+        }
+        return Arrays.toString(newArray);
+    }
 
     public int countFamily(){
         return children.length + 2;

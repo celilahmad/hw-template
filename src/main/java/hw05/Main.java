@@ -18,6 +18,13 @@ public class Main {
         Pet dog = new Pet("dog","Rock",5,new String[]{"eat","drink","sleep"});
 
         Human child = new Human("Michael","Karleone",1990,90);
+        Human child1 = new Human("John","Leone", 1992, 89);
+
+        Family family = new Family();
+        family.addChild(child);
+        family.addChild(child1);
+
+        System.out.println(family.getChildren().toString());
 
 
 
