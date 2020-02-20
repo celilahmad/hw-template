@@ -19,13 +19,6 @@ public class Human {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
-    }
-
-    public Human(String name, String surname, int yearOfBirth, int iq) {
-        this.name = name;
-        this.surname = surname;
-        this.yearOfBirth = yearOfBirth;
-        this.iq = iq;
 
         schedule[0][0] = "Sunday";
         schedule[0][1] = "Do the hommeworks";
@@ -47,6 +40,15 @@ public class Human {
 
         schedule[6][0] = "Saturday";
         schedule[6][1] = "Relax whole day";
+
+    }
+
+    public Human(String name, String surname, int yearOfBirth, int iq) {
+        this.name = name;
+        this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
+        this.iq = iq;
+
 
     }
 
@@ -140,7 +142,7 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", yearOfBirth=" + yearOfBirth +
                 ", iq=" + iq +
-                ", schedule=" + Arrays.toString(schedule) +
+                //", schedule=" + Arrays.toString(schedule) +
                 '}';
     }
 }

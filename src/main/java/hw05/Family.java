@@ -2,7 +2,9 @@ package hw05;
 
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Family {
 
@@ -19,22 +21,39 @@ public class Family {
         this.father = father;
     }
 
-    public void addChild(Human human){
-        for (int i = 0; i<children.length; i++){
-            children[i]=human;
-        }
+    @Override
+    public boolean equals(Object obj) {
 
+        return super.equals(obj);
     }
 
-    public String deleteChild(int[] human, String deleteChild){
-        int[] newArray = new int[children.length-1];
+    public void addChild(Human child){
+        int k=0;
+        Human[] childe = new Human[1];
+        for (int i = 0; i<childe.length; i++){
+            childe[i]=child;
+        }
+        k++;
+        children = new Human[k];
+        children=childe.clone();
+        System.out.println(Arrays.toString(children));
+    }
 
-        for (int items : human) {
-            if (!deleteChild.equals(items)){
-                System.arraycopy(human,1,newArray,0,items);
+    public Human[] deleteChild(Human human){
+        Human[] newArray = new Human[children.length-1];
+        int k=0;
+
+        for (int i=0; i<children.length; i++) {
+            if (children[i] == human){
+                continue;
+            }else{
+                newArray[i]=children[i];
+                k++;
             }
         }
-        return Arrays.toString(newArray);
+        children=new Human[k];
+        children=newArray.clone();
+        return children;
     }
 
     public int countFamily(){
@@ -73,7 +92,8 @@ public class Family {
         this.pet = pet;
     }
 
-    @Override
+
+    /*@Override
     public String toString() {
         return "Family{" +
                 "mother=" + mother +
@@ -81,5 +101,5 @@ public class Family {
                 ", children=" + Arrays.toString(children) +
                 ", pet=" + pet +
                 '}';
-    }
+    }*/
 }
