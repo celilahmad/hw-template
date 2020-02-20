@@ -20,27 +20,6 @@ public class Human {
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
 
-        schedule[0][0] = "Sunday";
-        schedule[0][1] = "Do the hommeworks";
-
-        schedule[1][0] = "Monday";
-        schedule[1][1] = "Go to course; Watch film";
-
-        schedule[2][0] = "Tuesday";
-        schedule[2][1] = "Go to course; Play football";
-
-        schedule[3][0] = "Wednesday";
-        schedule[3][1] = "Go to course; Play video games";
-
-        schedule[4][0] = "Thursday";
-        schedule[4][1] = "Go to course; Go out with friends";
-
-        schedule[5][0] = "Friday";
-        schedule[5][1] = "Go to course; Visit grandpa";
-
-        schedule[6][0] = "Saturday";
-        schedule[6][1] = "Relax whole day";
-
     }
 
     public Human(String name, String surname, int yearOfBirth, int iq) {
