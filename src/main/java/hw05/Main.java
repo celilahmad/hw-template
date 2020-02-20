@@ -24,18 +24,20 @@ public class Main {
         Human child2 = new Human("Merry","Leone", 1994, 86);
         Human child3 = new Human("Louise","Leone", 1996, 84);
 
-        Family family = new Family();
+        Family family = new Family(mother,father);
         family.addChild(child);
         family.addChild(child1);
         family.addChild(child2);
         family.addChild(child3);
 
 
-        family.getChildren();
+        System.out.println(Arrays.toString(family.getChildren()));
         System.out.println();
-        family.deleteChild(child1);
+       // family.deleteChild(child1);
 
-        family.getChildren();
+        System.out.println(family.getChildren());
+
+
 
 
 
