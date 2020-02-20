@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public abstract class Pet {
 
-    //private String species;
+    private Species species;
     private String nickName;
     private int age;
     private int trickLevel = (int) (Math.random() * 100 + 1);
@@ -57,6 +57,18 @@ public abstract class Pet {
 
     public void setTrickLevel(int trickLevel) {
         this.trickLevel = trickLevel;
+    }
+
+    public Species getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(Species species) {
+        this.species = species;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String[] getHabbits() {
