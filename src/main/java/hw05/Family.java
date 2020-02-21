@@ -27,41 +27,40 @@ public class Family {
 
         return super.equals(obj);
     }
-    int k=0;
-    public Human[] addChild(Human child){
 
-        Human[] childe = new Human[k];
-        for (int i = k; i<childe.length; i++){
-            childe[i]=child;
-
+    int x=1;
+    Human [] chil;
+    public Human[] addChild(Human h){
+        chil = new Human[x];
+        chil[x-1]=h;
+        if(x!=1){
+            for(int i=0;i<x-1;i++){
+                chil[i]=children[i];
+            }
         }
-        k++;
-        this.children = new Human[k];
-
-        this.children=childe.clone();
+        x++;
+        setChildren(chil);
         return children;
     }
 
-    public void deleteChild(Human human){
+    public Human[] deleteChild(Human del){
         Human[] newArray = new Human[children.length-1];
-        int k=0;
 
-        for (int i=0; i<children.length-1; i++) {
-            if (children[i] == human){
-                continue;
-            }else{
-                newArray[i]=children[i];
-                k++;
+        for (int i=0,  j=0; i<children.length; i++) {
+            if (children[i] != del){
+                newArray[j++]=children[i];
+
             }
         }
-        //children=new Human[k];
-        children=newArray.clone();
-
-        System.out.println(Arrays.toString(children));
+        setChildren(newArray);
+        return children;
+        //System.out.println(Arrays.toString(children));
     }
 
-    public int countFamily(){
-        return children.length + 2;
+
+    public void countFamily(){
+        int familySize = children.length + 2;
+        System.out.println("Family size is " + familySize);
     }
 
     public Human getMother() {
@@ -96,14 +95,14 @@ public class Family {
         this.pet = pet;
     }
 
-    @Override
+  /*  @Override
     public String toString() {
         return "Family{" +
                 "children=" + Arrays.toString(children) +
                 '}';
-    }
+    }*/
 
-    /*@Override
+    @Override
     public String toString() {
         return "Family{" +
                 "mother=" + mother +
@@ -111,5 +110,5 @@ public class Family {
                 ", children=" + Arrays.toString(children) +
                 ", pet=" + pet +
                 '}';
-    }*/
+    }
 }
