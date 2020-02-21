@@ -1,8 +1,6 @@
 package hw05;
 
 
-
-
 import java.util.Arrays;
 
 
@@ -24,18 +22,28 @@ public class Family {
 
     @Override
     public boolean equals(Object obj) {
-
-        return super.equals(obj);
+        if (obj == null)
+            return false;
+        if (obj.getClass() != this.getClass())
+            return false;
+        Family family = (Family) obj;
+        return (this.mother == family.mother && this.father == family.father);
     }
 
-    int x=1;
-    Human [] chil;
-    public Human[] addChild(Human h){
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    int x = 1;
+    Human[] chil;
+
+    public Human[] addChild(Human h) {
         chil = new Human[x];
-        chil[x-1]=h;
-        if(x!=1){
-            for(int i=0;i<x-1;i++){
-                chil[i]=children[i];
+        chil[x - 1] = h;
+        if (x != 1) {
+            for (int i = 0; i < x - 1; i++) {
+                chil[i] = children[i];
             }
         }
         x++;
@@ -43,12 +51,12 @@ public class Family {
         return children;
     }
 
-    public Human[] deleteChild(Human del){
-        Human[] newArray = new Human[children.length-1];
+    public Human[] deleteChild(Human del) {
+        Human[] newArray = new Human[children.length - 1];
 
-        for (int i=0,  j=0; i<children.length; i++) {
-            if (children[i] != del){
-                newArray[j++]=children[i];
+        for (int i = 0, j = 0; i < children.length; i++) {
+            if (children[i] != del) {
+                newArray[j++] = children[i];
 
             }
         }
@@ -58,7 +66,7 @@ public class Family {
     }
 
 
-    public void countFamily(){
+    public void countFamily() {
         int familySize = children.length + 2;
         System.out.println("Family size is " + familySize);
     }

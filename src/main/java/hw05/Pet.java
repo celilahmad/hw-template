@@ -7,10 +7,11 @@ public class Pet {
     private String species;
     private String nickName;
     private int age;
-    private int trickLevel=(int)(Math.random()*100+1);
+    private int trickLevel = (int) (Math.random() * 100 + 1);
     private String[] habbits;
 
-    public Pet(){}
+    public Pet() {
+    }
 
     public Pet(String species, String nickName) {
         this.species = species;
@@ -25,15 +26,30 @@ public class Pet {
         this.habbits = habbits;
     }
 
-    public void eat(){
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (obj.getClass() != this.getClass())
+            return false;
+        Pet pet = (Pet) obj;
+        return (this.species == pet.species && this.nickName == pet.nickName && this.habbits == pet.habbits);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.age;
+    }
+
+    public void eat() {
         System.out.println("I'm eating");
     }
 
-    public void respond(Pet pet){
+    public void respond(Pet pet) {
         System.out.println("Hello, owner. I am - " + pet + ". I miss you!");
     }
 
-    public void foul(){
+    public void foul() {
         System.out.println("I need to cover up");
     }
 
@@ -79,7 +95,7 @@ public class Pet {
 
     @Override
     public String toString() {
-        return species +"{" +
+        return species + "{" +
                 "nickName='" + nickName + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +

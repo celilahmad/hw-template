@@ -19,11 +19,14 @@ public class Main {
 
         //Pet dog = new Pet("dog","Rock",5,new String[]{"eat","drink","sleep"});
 
-        Human child = new Human("Michael","Karleone",1990,90);
-        Human child1 = new Human("John","Leone", 1992, 89);
-        Human child2 = new Human("Merry","Leone", 1994, 86);
-        Human child3 = new Human("Louise","Leone", 1996, 84);
-        Human child4 = new Human("Harry", "Reednap", 1998, 88);
+        Human child = new Human("Michael","Karleone",1990,90,new String[][]{{"Monday","doo"}, {"Tuesday", "work"}});
+        Human child1 = new Human("John","Leone", 1992, 89,new String[][]{{"Monday","sleep"}, {"Tuesday", "run"}});
+        Human child2 = new Human("Merry","Leone", 1994, 86,new String[][]{{"TuesdayMonday","eat"}, {"Wednesday", "sleep"}});
+        Human child3 = new Human("Louise","Leone", 1996, 84,new String[][]{{"Monday","gym"}, {"Tuesday", "work"}});
+        Human child4 = new Human("Harry", "Reednap", 1998, 88,new String[][]{{"Friday","doo"}, {"Saturday", "work"}});
+
+        System.out.println(child);
+
 
         Family family = new Family(mother,father);
         family.addChild(child);
