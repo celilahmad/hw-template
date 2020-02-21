@@ -25,6 +25,11 @@ public class Pet {
         this.habbits = habbits;
     }
 
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
     public void eat(){
         System.out.println("I'm eating");
     }

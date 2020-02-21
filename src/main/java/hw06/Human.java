@@ -1,5 +1,6 @@
 package hw06;
 
+
 import java.util.Arrays;
 
 public class Human {
@@ -7,60 +8,68 @@ public class Human {
     private String name;
     private String surname;
     private int yearOfBirth;
-    private int iq = (int)(Math.random()*100+1);
-    private Pet pet;
-    private Human mother;
-    private Human father;
+    private int iq = (int) (Math.random() * 100 + 1);
     private String[][] schedule = new String[7][1];
+    private Family family;
 
+    public Human() {
 
-
-    public Human(){}
+    }
 
     public Human(String name, String surname, int yearOfBirth) {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
+
     }
 
-    public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, Human mother, Human father /*int[][] schedule*/) {
+    public Human(String name, String surname, int yearOfBirth, int iq) {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
         this.iq = iq;
-        this.pet = pet;
-        this.mother = mother;
-        this.father = father;
-        //this.schedule = schedule;
     }
 
-    public String isFeed(boolean feedTime){
-        //pet.setTrickLevel((int)(Math.random()*100+1));
-        if (feedTime==false){
-            if (pet.getTrickLevel()>50){
-                System.out.println("Trick level: " + pet.getTrickLevel());
-                return "Hm... I will feed " + pet.getNickName();
-            }else{
-                System.out.println("Trick level: " +pet.getTrickLevel());
-                return "I think " + pet.getNickName() + " is not hungry.";
-            }
-        }else{
-            return "Feeding";
-        }
+    public Human(String name, String surname, int yearOfBirth, int iq, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
+        this.iq = iq;
+        this.schedule = schedule;
 
 
     }
 
-    public void greetPet(Pet pet){
-        System.out.println("Hello, "+ pet.getNickName());
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 
-    public void describePet(Pet pet){
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (obj.getClass() != this.getClass())
+            return false;
+        Human human = (Human) obj;
+        return (this.name == human.name && this.surname == human.surname && this.family == human.family);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.yearOfBirth;
+    }
+
+    public void greetPet(Pet pet) {
+        System.out.println("Hello, " + pet.getNickName());
+    }
+
+    public void describePet(Pet pet) {
         int sly = pet.getTrickLevel();
-        StringBuilder s =new StringBuilder();
-        if (sly>50){
+        StringBuilder s = new StringBuilder();
+        if (sly > 50) {
             s.append("very sly");
-        }else if(sly<50) {
+        } else if (sly < 50) {
             s.append("almost not sly");
         }
         System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old"
@@ -99,29 +108,6 @@ public class Human {
         this.iq = iq;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }
 
     public String[][] getSchedule() {
         return schedule;
@@ -131,17 +117,22 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
     @Override
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + yearOfBirth +
+                ", yearOfBirth=" + yearOfBirth +
                 ", iq=" + iq +
-                ", mother=" + mother.getName() + " " + mother.getSurname() +
-                ", father=" + father.getName() + " " +father.getSurname() + "," + "\n" +
-                ", schedule=" + schedule +
-                "pet=" + pet +
+                ", schedule=" + Arrays.deepToString(schedule) +
                 '}';
     }
 }

@@ -6,7 +6,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
 
         DayOfWeek mon = DayOfWeek.MONDAY;
         DayOfWeek tue = DayOfWeek.TUESDAY;
@@ -18,16 +18,25 @@ public class Main {
 
 
 
-
+        Family family = new Family();
         Human human= new Human();
 
         human.setSchedule(new String[][]{{mon.name(), "do homework"}, {tue.name(), "work"}, {wed.name(), "run"},
                 {thu.name(), "go to gym"}, {fri.name(), "go fishing"}, {sat.name(), "relax"}, {sun.name(), "sleep"}});
 
 
-        for (int i =0; i<human.getSchedule().length; i++){
+        Human child = new Human("Jack", "Sparrow", 1800, 100, new String[][]{{"Monday","doo"}, {"Tuesday", "work"}});
+        Human child1 = new Human("Jacky", "Sparrowy", 1800, 100, new String[][]{{"Monday","doo"}, {"Tuesday", "work"}});
 
-        }
+        family.addChild(child);
+        family.addChild(child1);
+
+
+        System.out.println(Arrays.toString(family.getChildren()));
+
+        family.deleteChild(child);
+
+        System.out.println(Arrays.toString(family.getChildren()));
 
         System.out.println(Arrays.deepToString(human.getSchedule()));
         /*Human mother = new Human();
