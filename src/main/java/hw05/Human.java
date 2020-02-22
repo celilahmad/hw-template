@@ -128,6 +128,6 @@ public class Human {
                 ", yearOfBirth=" + yearOfBirth +
                 ", iq=" + iq +
                 ", schedule=" + Arrays.deepToString(schedule) +
-                '}';
+                '}'+"\n";
     }
 }
