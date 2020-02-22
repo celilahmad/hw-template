@@ -30,19 +30,11 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human(String name, String surname, int yearOfBirth, int iq, String[][] schedule) {
-        this.name = name;
-        this.surname = surname;
-        this.yearOfBirth = yearOfBirth;
-        this.iq = iq;
-        this.schedule = schedule;
 
-
-    }
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
+        System.out.println("Finalize method called. Deleting!!!");
     }
 
     @Override
@@ -132,7 +124,7 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", yearOfBirth=" + yearOfBirth +
                 ", iq=" + iq +
-                ", schedule=" + Arrays.deepToString(schedule) +
-                '}';
+                //", schedule=" + Arrays.deepToString(schedule) +
+                '}'+"\n";
     }
 }

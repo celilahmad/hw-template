@@ -27,7 +27,7 @@ public class Pet {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
+        System.out.println("Finalize method called. Deleting!!!");
     }
 
     public void eat(){

@@ -38,8 +38,8 @@ public class Family {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
-        System.out.println("Deleting!!!");
+
+        System.out.println("Finalize method called. Deleting!!!");
     }
 
     int x = 1;
@@ -69,9 +69,27 @@ public class Family {
         finalize();
         setChildren(newArray);
 
-        return children;
+        return getChildren();
         //System.out.println(Arrays.toString(children));
     }
+
+    public Human[] delChild(int del) throws Throwable {
+        Human[] newArray = new Human[children.length - 1];
+
+        for (int i = 0, j = 0; i < children.length; i++) {
+            if (i != del) {
+                newArray[j++] = children[i];
+
+            }
+        }
+        finalize();
+        setChildren(newArray);
+
+        return getChildren();
+        //System.out.println(Arrays.toString(children));
+    }
+
+
 
 
     public void countFamily() {

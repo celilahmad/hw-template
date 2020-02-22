@@ -21,46 +21,50 @@ public class Main {
         Family family = new Family();
         Human human= new Human();
 
-        human.setSchedule(new String[][]{{mon.name(), "do homework"}, {tue.name(), "work"}, {wed.name(), "run"},
+
+
+        Human child = new Human("Jack", "Sparrow", 1800, 100);
+        Human child1 = new Human("Jacky", "Sparrowy", 1900, 80);
+        Human child2 = new Human("Mick", "Mouse", 1950, 90);
+        Human child3 = new Human("Micky", "Mousy", 1990, 75);
+
+        child.setSchedule(new String[][]{{mon.name(), "do homework"}, {tue.name(), "work"}, {wed.name(), "run"},
                 {thu.name(), "go to gym"}, {fri.name(), "go fishing"}, {sat.name(), "relax"}, {sun.name(), "sleep"}});
 
+        child1.setSchedule(new String[][]{{mon.name(), "go to work"}, {tue.name(), "watch football"}, {wed.name(), "games"},
+                {thu.name(), "play chess"}, {fri.name(), "code"}, {sat.name(), "relax"}, {sun.name(), "sleep"}});
 
-        Human child = new Human("Jack", "Sparrow", 1800, 100, new String[][]{{"Monday","doo"}, {"Tuesday", "work"}});
-        Human child1 = new Human("Jacky", "Sparrowy", 1800, 100, new String[][]{{"Monday","doo"}, {"Tuesday", "work"}});
+        child2.setSchedule(new String[][]{{mon.name(), "wash car"}, {tue.name(), "work"}, {wed.name(), "watch tv"},
+                {thu.name(), "go to gym"}, {fri.name(), "visit friends"}, {sat.name(), "relax"}, {sun.name(), "sleep"}});
+
+        child3.setSchedule(new String[][]{{mon.name(), "work"}, {tue.name(), "clean house"}, {wed.name(), "play poker"},
+                {thu.name(), "play games"}, {fri.name(), "go to pub"}, {sat.name(), "relax"}, {sun.name(), "sleep"}});
+
+
 
         family.addChild(child);
         family.addChild(child1);
-
+        family.addChild(child2);
+        family.addChild(child3);
 
         System.out.println(Arrays.toString(family.getChildren()));
+
+
+        for (Human h : family.getChildren()) {
+            System.out.println(Arrays.deepToString(h.getSchedule()));
+        }
 
         family.deleteChild(child);
+        family.delChild(0);
+
+
 
         System.out.println(Arrays.toString(family.getChildren()));
 
-        System.out.println(Arrays.deepToString(human.getSchedule()));
-        /*Human mother = new Human();
-        mother.setName("Jane");
-        mother.setSurname("Karleone");
-
-        Human father = new Human();
-        father.setName("Vito");
-        father.setSurname("Karleone");
+        //System.out.println(Arrays.deepToString(human.getSchedule()));
 
 
-        Pet dog = new Pet(Species.DOG,"Rock",5,new String[]{"eat","drink","sleep"});
-
-        Human child = new Human("Michael","Karleone",1990,90,dog,mother,father);
-
-        System.out.println(dog);
-        System.out.println(child);
-
-        System.out.println();
-
-        String feed= child.isFeed(false);
-        System.out.println(feed);
-
-        child.describePet(dog);*/
+        family.countFamily();
 
 
 
