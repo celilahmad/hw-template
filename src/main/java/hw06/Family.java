@@ -66,14 +66,14 @@ public class Family {
 
             }
         }
-        finalize();
         setChildren(newArray);
 
         return getChildren();
         //System.out.println(Arrays.toString(children));
     }
 
-    public Human[] delChild(int del) throws Throwable {
+
+    public Human[] deleteChild(int del) throws Throwable {
         Human[] newArray = new Human[children.length - 1];
 
         for (int i = 0, j = 0; i < children.length; i++) {
@@ -82,7 +82,6 @@ public class Family {
 
             }
         }
-        finalize();
         setChildren(newArray);
 
         return getChildren();
@@ -92,9 +91,9 @@ public class Family {
 
 
 
-    public void countFamily() {
+    public int countFamily() {
         int familySize = children.length + 2;
-        System.out.println("Family size is " + familySize);
+        return familySize;
     }
 
     public Human getMother() {

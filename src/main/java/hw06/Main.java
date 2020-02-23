@@ -53,9 +53,10 @@ public class Main {
         for (Human h : family.getChildren()) {
             System.out.println(Arrays.deepToString(h.getSchedule()));
         }
-
+        System.out.println();
+        //family.finalize();
         family.deleteChild(child);
-        family.delChild(0);
+        family.deleteChild(0);
 
 
 
@@ -64,7 +65,8 @@ public class Main {
         //System.out.println(Arrays.deepToString(human.getSchedule()));
 
 
-        family.countFamily();
+        int size= family.countFamily();
+        System.out.println("Family size is " + size);
 
 
 
