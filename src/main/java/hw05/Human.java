@@ -47,7 +47,7 @@ public class Human {
         if (obj.getClass() != this.getClass())
             return false;
         Human human = (Human) obj;
-        return (this.name == human.name && this.surname == human.surname && this.family == human.family);
+        return (this.name.equals(human.name)&& this.surname.equals(human.surname) && this.family.equals(human.family));
     }
 
     @Override

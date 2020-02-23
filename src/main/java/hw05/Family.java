@@ -27,7 +27,7 @@ public class Family {
         if (obj.getClass() != this.getClass())
             return false;
         Family family = (Family) obj;
-        return (this.mother == family.mother && this.father == family.father);
+        return (this.mother.equals(family.mother) && this.father.equals(family.father));
     }
 
     @Override
@@ -35,10 +35,11 @@ public class Family {
         return super.hashCode();
     }
 
-    int x = 1;
-    Human[] chil;
+
 
     public Human[] addChild(Human h) {
+        int x = 1;
+        Human[] chil;
         chil = new Human[x];
         chil[x - 1] = h;
         if (x != 1) {
