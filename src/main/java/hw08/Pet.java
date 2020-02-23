@@ -10,7 +10,7 @@ public abstract class Pet {
     private String nickName;
     private int age;
     private int trickLevel = (int) (Math.random() * 100 + 1);
-    private Set<String> habbits=new HashSet<>();
+    private Set<String> habbits = new HashSet<>();
 
     public Pet() {
     }

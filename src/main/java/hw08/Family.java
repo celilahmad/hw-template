@@ -8,8 +8,8 @@ public class Family {
 
     private Human mother;
     private Human father;
-    private List<Human> children=new ArrayList<>();
-    private Set<Pet> pet=new HashSet<>();
+    private List<Human> children = new ArrayList<>();
+    private Set<Pet> pet = new HashSet<>();
 
     public Family() {
     }
@@ -42,15 +42,15 @@ public class Family {
     }
 
     int x = 0;
+
     public List<Human> addChild(Human h) {
 
-        for (int i = x; i<x+1; i++) {
+        for (int i = x; i < x + 1; i++) {
             children.add(x, h);
         }
         x++;
         return children;
     }
-
 
 
     public List<Human> deleteChild(Human del) throws Throwable {
@@ -70,8 +70,6 @@ public class Family {
 
         return getChildren();
     }
-
-
 
 
     public void countFamily() {

@@ -45,7 +45,7 @@ public class Human {
         } else if (sly < 50) {
             s.append("almost not sly");
         }
-        System.out.println("I have a "  + ", he is " + pet.getAge() + " years old"
+        System.out.println("I have a " + ", he is " + pet.getAge() + " years old"
                 + ", he is " + s);
     }
 

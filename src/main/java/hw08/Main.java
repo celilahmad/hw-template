@@ -14,31 +14,36 @@ public class Main {
         Family family = new Family();
 
 
-        Human child1 = new Human("Jamilla","Naek", 1990);
-        child1.getSchedule().put("Monday","work");
-        child1.getSchedule().put("Tuesday","work");
+        Human child1 = new Human("Jamilla", "Naek", 1990);
+        child1.getSchedule().put("Monday", "work");
+        child1.getSchedule().put("Tuesday", "work");
 
-        Human child2 = new Human("Ali","Naek", 1992);
-        child2.getSchedule().put("Monday","school");
-        child2.getSchedule().put("Tuesday","watch tv");
+        Human child2 = new Human("Ali", "Naek", 1992);
+        child2.getSchedule().put("Monday", "school");
+        child2.getSchedule().put("Tuesday", "watch tv");
 
-        Human child3 = new Human("Danielle","Naek", 1993);
-        child3.getSchedule().put("Monday","gym");
-        child3.getSchedule().put("Tuesday","fishing");
+        Human child3 = new Human("Danielle", "Naek", 1993);
+        child3.getSchedule().put("Monday", "gym");
+        child3.getSchedule().put("Tuesday", "fishing");
 
-        Human child4 = new Human("Giovanni","Naek", 1995);
-        child4.getSchedule().put("Monday","work");
-        child4.getSchedule().put("Tuesday","pub");
+        Human child4 = new Human("Giovanni", "Naek", 1995);
+        child4.getSchedule().put("Monday", "work");
+        child4.getSchedule().put("Tuesday", "pub");
 
-        Human child5 = new Human("Max","Naek", 1997);
-        child5.getSchedule().put("Monday","fishing");
-        child5.getSchedule().put("Tuesday","sleep");
+        Human child5 = new Human("Max", "Naek", 1997);
+        child5.getSchedule().put("Monday", "fishing");
+        child5.getSchedule().put("Tuesday", "sleep");
+
+        Human child6 = new Human("Taro", "Naek", 1999);
+        child6.getSchedule().put("Monday", "working");
+        child6.getSchedule().put("Tuesday", "sleep");
 
         family.addChild(child1);
         family.addChild(child2);
         family.addChild(child3);
         family.addChild(child4);
         family.addChild(child5);
+        family.addChild(child6);
 
         System.out.println(family.getChildren());
 
@@ -54,14 +59,14 @@ public class Main {
 
         System.out.println();
 
-       Dog dog1 = new Dog("Toplan", 3);
-       dog1.getHabbits().addAll(Arrays.asList("playing","barking"));
+        Dog dog1 = new Dog("Toplan", 3);
+        dog1.getHabbits().addAll(Arrays.asList("playing", "barking"));
 
         Fish fish1 = new Fish("Buble", 1);
-        fish1.getHabbits().addAll(Arrays.asList("swimming","eating"));
+        fish1.getHabbits().addAll(Arrays.asList("swimming", "eating"));
 
         DomesticCat cat1 = new DomesticCat("Tom", 2);
-        cat1.getHabbits().addAll(Arrays.asList("eating","sleeping"));
+        cat1.getHabbits().addAll(Arrays.asList("eating", "sleeping"));
 
         RoboCat rob1 = new RoboCat("Matrix", 5);
         rob1.getHabbits().addAll(Arrays.asList("cleaning house"));
