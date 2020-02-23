@@ -1,7 +1,12 @@
 package hw07;
 
 
+
+import hw06.Human;
+import hw06.Pet;
+
 import java.util.Arrays;
+
 
 public class Family {
 
@@ -21,46 +26,78 @@ public class Family {
 
     @Override
     public boolean equals(Object obj) {
-
-        return super.equals(obj);
+        if (obj == null)
+            return false;
+        if (obj.getClass() != this.getClass())
+            return false;
+        Family family = (Family) obj;
+        return (this.mother == family.mother && this.father == family.father);
     }
 
-    int k = 0;
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 
-    public Human[] addChild(Human child) {
+    @Override
+    protected void finalize() throws Throwable {
 
-        Human[] childe = new Human[k];
-        for (int i = k; i < childe.length; i++) {
-            childe[i] = child;
+        System.out.println("Finalize method called. Deleting!!!");
+    }
 
+    int x = 1;
+    Human[] chil;
+    public Human[] addChild(Human h) {
+        chil = new Human[x];
+        chil[x - 1] = h;
+        if (x != 1) {
+            for (int i = 0; i < x - 1; i++) {
+                chil[i] = children[i];
+            }
         }
-        k++;
-        this.children = new Human[k];
-
-        this.children = childe.clone();
+        x++;
+        setChildren(chil);
         return children;
     }
 
-    public void deleteChild(Human human) {
+    public Human[] deleteChild(Human del) throws Throwable {
         Human[] newArray = new Human[children.length - 1];
-        int k = 0;
 
-        for (int i = 0; i < children.length - 1; i++) {
-            if (children[i] == human) {
-                continue;
-            } else {
-                newArray[i] = children[i];
-                k++;
+        for (int i = 0, j = 0; i < children.length; i++) {
+            if (children[i] != del) {
+                newArray[j++] = children[i];
+
             }
         }
-        //children=new Human[k];
-        children = newArray.clone();
+        finalize();
+        setChildren(newArray);
 
-        System.out.println(Arrays.toString(children));
+        return getChildren();
+        //System.out.println(Arrays.toString(children));
     }
 
-    public int countFamily() {
-        return children.length + 2;
+    public Human[] delChild(int del) throws Throwable {
+        Human[] newArray = new Human[children.length - 1];
+
+        for (int i = 0, j = 0; i < children.length; i++) {
+            if (i != del) {
+                newArray[j++] = children[i];
+
+            }
+        }
+        finalize();
+        setChildren(newArray);
+
+        return getChildren();
+        //System.out.println(Arrays.toString(children));
+    }
+
+
+
+
+    public void countFamily() {
+        int familySize = children.length + 2;
+        System.out.println("Family size is " + familySize);
     }
 
     public Human getMother() {
@@ -95,14 +132,14 @@ public class Family {
         this.pet = pet;
     }
 
-    @Override
+  /*  @Override
     public String toString() {
         return "Family{" +
                 "children=" + Arrays.toString(children) +
                 '}';
-    }
+    }*/
 
-    /*@Override
+    @Override
     public String toString() {
         return "Family{" +
                 "mother=" + mother +
@@ -110,5 +147,5 @@ public class Family {
                 ", children=" + Arrays.toString(children) +
                 ", pet=" + pet +
                 '}';
-    }*/
+    }
 }
