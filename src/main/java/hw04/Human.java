@@ -9,7 +9,7 @@ public class Human {
     private Pet pet;
     private Human mother;
     private Human father;
-    private int[][] schedule = new int[7][1];
+    private String[][] schedule = new String[7][1];
 
 
 
@@ -21,7 +21,15 @@ public class Human {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, Human mother, Human father /*int[][] schedule*/) {
+    public Human(String name, String surname, int yearOfBirth, Human mother, Human father) {
+        this.name = name;
+        this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
+        this.mother = mother;
+        this.father = father;
+    }
+
+    public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, Human mother, Human father, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
@@ -29,7 +37,7 @@ public class Human {
         this.pet = pet;
         this.mother = mother;
         this.father = father;
-        //this.schedule = schedule;
+        this.schedule = schedule;
     }
 
     public String isFeed(boolean feedTime){
@@ -48,6 +56,7 @@ public class Human {
 
 
     }
+
 
     public void greetPet(Pet pet){
         System.out.println("Hello, "+ pet.getNickName());
@@ -121,11 +130,11 @@ public class Human {
         this.father = father;
     }
 
-    public int[][] getSchedule() {
+    public String[][] getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(int[][] schedule) {
+    public void setSchedule(String[][] schedule) {
         this.schedule = schedule;
     }
 
