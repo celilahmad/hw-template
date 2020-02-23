@@ -1,9 +1,7 @@
 package hw08;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 public class Family {
@@ -11,7 +9,7 @@ public class Family {
     private Human mother;
     private Human father;
     private List<Human> children=new ArrayList<>();
-    private Pet pet;
+    private Set<Pet> pet=new HashSet<>();
 
     public Family() {
     }
@@ -105,15 +103,15 @@ public class Family {
         this.children = children;
     }
 
-    public Pet getPet() {
+    public Set<Pet> getPet() {
         return pet;
     }
 
-    public void setPet(Pet pet) {
+    public void setPet(Set<Pet> pet) {
         this.pet = pet;
     }
 
-  /*  @Override
+    /*  @Override
     public String toString() {
         return "Family{" +
                 "children=" + Arrays.toString(children) +
@@ -129,4 +127,5 @@ public class Family {
                 ", pet=" + pet +
                 '}';
     }
+
 }

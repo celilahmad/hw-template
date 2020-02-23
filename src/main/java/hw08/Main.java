@@ -50,6 +50,10 @@ public class Main {
 
         System.out.println(family.getChildren());
 
+        family.countFamily();
+
+        System.out.println();
+
        Dog dog1 = new Dog("Toplan", 3);
        dog1.getHabbits().addAll(Arrays.asList("playing","barking"));
 
@@ -70,7 +74,7 @@ public class Main {
 
         System.out.println();
 
-        dog1.respond();
+        /*dog1.respond();
         cat1.foul();
         fish1.respond();
 
@@ -79,8 +83,10 @@ public class Main {
         man.repairCar();
 
         Woman woman = new Woman("Emily", "Clarke", 1985);
-        woman.makeUp();
+        woman.makeUp();*/
 
-
+        family.getPet().add(dog1);
+        family.getPet().add(cat1);
+        System.out.println(family.getPet());
     }
 }
