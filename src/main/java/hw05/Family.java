@@ -36,11 +36,10 @@ public class Family {
     }
 
 
-
+    int x = 1;
     public Human[] addChild(Human h) {
-        int x = 1;
-        Human[] chil;
-        chil = new Human[x];
+
+        Human[] chil = new Human[x];
         chil[x - 1] = h;
         if (x != 1) {
             for (int i = 0; i < x - 1; i++) {
