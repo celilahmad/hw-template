@@ -27,6 +27,16 @@ public class Numbers {
             wrongNumbers++;
             guess = sc.nextInt();
             if(guess>=0 && guess<=100) {
+                for (int i = 0; i < array.length; i++){
+                    for (int j = 0; j <= array[i]; ){
+                        if (wrongNumbers == array [j]){
+                            break;
+                        }else{
+                            array[i]= wrongNumbers;
+                        }
+                    }
+
+                }
                 if (guess > number) {
                     System.out.println("Your number is too big. Please, try again.");
 
@@ -37,12 +47,25 @@ public class Numbers {
                 }
 
                 array[wrongNumbers] = guess;
+
+                /*for(int why = 0; why<array.length; why++){
+                    if(Arrays.asList(array).contains(array[wrongNumbers])){
+                        //System.out.println("Duplicate found! Please enter a non-repeating digit");
+                        array[wrongNumbers]=0;
+                        wrongNumbers--;
+                    }
+                    array[wrongNumbers] = guess;
+                }
+*/
+
             }else{
                 System.out.println("Please enter numbers range 0-100");
 
             }
         }
         System.out.println("Congratulations, " + name);
+
+
 
         int[] wrongArray = new int[wrongNumbers];
 
