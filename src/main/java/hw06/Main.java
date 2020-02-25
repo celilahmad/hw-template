@@ -54,7 +54,7 @@ public class Main {
             System.out.println(Arrays.deepToString(h.getSchedule()));
         }
         System.out.println();
-        //family.finalize();
+        family.finalize();
         family.deleteChild(child);
         family.deleteChild(0);
 
