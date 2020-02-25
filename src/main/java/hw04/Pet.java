@@ -7,7 +7,7 @@ public class Pet {
     private String species;
     private String nickName;
     private int age;
-    private int trickLevel=(int)(Math.random()*100+1);
+    private int trickLevel;
     private String[] habbits;
 
     public Pet(){}

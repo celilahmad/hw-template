@@ -29,6 +29,15 @@ public class Human {
         this.father = father;
     }
 
+    public Human(String name, String surname, int yearOfBirth, Pet pet, Human mother, Human father) {
+        this.name = name;
+        this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
+        this.pet = pet;
+        this.mother = mother;
+        this.father = father;
+    }
+
     public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, Human mother, Human father, String[][] schedule) {
         this.name = name;
         this.surname = surname;
@@ -40,22 +49,25 @@ public class Human {
         this.schedule = schedule;
     }
 
-    public String isFeed(boolean feedTime){
-        //pet.setTrickLevel((int)(Math.random()*100+1));
-        if (feedTime==false){
-            if (pet.getTrickLevel()>50){
-                System.out.println("Trick level: " + pet.getTrickLevel());
-                return "Hm... I will feed " + pet.getNickName();
+    public boolean isFeed(boolean feedTime){
+        boolean b = feedTime;
+        int trickLevel=(int)(Math.random()*100+1);
+        pet.setTrickLevel(trickLevel);
+
+            if(!b && pet.getTrickLevel()>50){
+                System.out.println("Trick level: " + pet.getTrickLevel() + "\nHm... I will feed " + pet.getNickName());
+                return true;
+            }else if(!b && pet.getTrickLevel()<50){
+                System.out.println("Trick level: " +pet.getTrickLevel() + "\nI think " + pet.getNickName() + " is not hungry.");
+                return false;
             }else{
-                System.out.println("Trick level: " +pet.getTrickLevel());
-                return "I think " + pet.getNickName() + " is not hungry.";
+                System.out.println("feeding");
+                return true;
             }
-        }else{
-            return "Feeding";
         }
 
 
-    }
+
 
 
     public void greetPet(Pet pet){
