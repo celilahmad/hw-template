@@ -57,16 +57,19 @@ public class Main {
         System.out.println();
 
         Dog dog1 = new Dog("Toplan", 3);
-        dog1.getHabbits().addAll(Arrays.asList("playing", "barking"));
+        dog1.getHabbits().add("playing");
+        dog1.getHabbits().add("barking");
 
         Fish fish1 = new Fish("Buble", 1);
-        fish1.getHabbits().addAll(Arrays.asList("swimming", "eating"));
+        fish1.getHabbits().add("swimming");
+        fish1.getHabbits().add("eating");
 
         DomesticCat cat1 = new DomesticCat("Tom", 2);
-        cat1.getHabbits().addAll(Arrays.asList("eating", "sleeping"));
+        cat1.getHabbits().add("eating");
+        cat1.getHabbits().add("sleeping");
 
         RoboCat rob1 = new RoboCat("Matrix", 5);
-        rob1.getHabbits().addAll(Arrays.asList("cleaning house"));
+        rob1.getHabbits().add("Cleaning houses");
 
 
         System.out.println(dog1);
