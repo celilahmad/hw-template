@@ -1,6 +1,5 @@
 package hw08;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +15,6 @@ public abstract class Pet {
     }
 
     public Pet(String nickName) {
-        //this.species = species;
         this.nickName = nickName;
     }
 

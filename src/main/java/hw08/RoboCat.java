@@ -1,16 +1,12 @@
 package hw08;
 
-import java.util.Arrays;
-import java.util.Set;
-
 public class RoboCat extends Pet {
 
-    Species roby = Species.UNKNOWN;
+    Species species;
 
     public RoboCat(String nickName, int age) {
-
         super(nickName, age);
-
+        this.species=Species.UNKNOWN;
     }
 
     @Override
@@ -20,7 +16,7 @@ public class RoboCat extends Pet {
 
     @Override
     public String toString() {
-        return roby + "{" +
+        return species + "{" +
                 "nickName='" + getNickName() + '\'' +
                 ", age=" + getAge() +
                 ", habbits=" + getHabbits().toString() +

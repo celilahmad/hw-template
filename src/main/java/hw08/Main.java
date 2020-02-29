@@ -1,10 +1,6 @@
 package hw08;
 
-
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Main {
 
@@ -47,15 +43,16 @@ public class Main {
 
         System.out.println(family.getChildren());
 
+        family.finalize();
         family.deleteChild(child1);
 
         System.out.println(family.getChildren());
 
-        family.delChild(2);
+        family.deleteChild(2);
 
         System.out.println(family.getChildren());
 
-        family.countFamily();
+        System.out.println(family.countFamily());
 
         System.out.println();
 

@@ -1,8 +1,6 @@
 package hw08;
 
-
 import java.util.*;
-
 
 public class Family {
 
@@ -36,15 +34,12 @@ public class Family {
     }
 
     @Override
-    protected void finalize() throws Throwable {
-
+    protected void finalize(){
         System.out.println("Finalize method called. Deleting!!!");
     }
 
     int x = 0;
-
     public List<Human> addChild(Human h) {
-
         for (int i = x; i < x + 1; i++) {
             children.add(x, h);
         }
@@ -54,27 +49,20 @@ public class Family {
 
 
     public List<Human> deleteChild(Human del) throws Throwable {
-
         getChildren().remove(del);
-        finalize();
-
         return getChildren();
 
     }
 
-    public List<Human> delChild(int del) throws Throwable {
-
+    public List<Human> deleteChild(int del) throws Throwable {
         getChildren().remove(del);
-
-        finalize();
-
         return getChildren();
     }
 
 
-    public void countFamily() {
+    public String countFamily() {
         int familySize = children.size() + 2;
-        System.out.println("Family size is " + familySize);
+        return "Family size is " + familySize;
     }
 
     public Human getMother() {
@@ -109,12 +97,6 @@ public class Family {
         this.pet = pet;
     }
 
-    /*  @Override
-    public String toString() {
-        return "Family{" +
-                "children=" + Arrays.toString(children) +
-                '}';
-    }*/
 
     @Override
     public String toString() {

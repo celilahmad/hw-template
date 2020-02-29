@@ -23,15 +23,14 @@ public class Human {
 
     }
 
-    public Human(String name, String surname, int yearOfBirth, int iq) {
+    public Human(String name, String surname, int yearOfBirth, int iq, HashMap<String, String> schedule){
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
         this.iq = iq;
-
+        this.schedule=schedule;
 
     }
-
 
     public void greetPet(Pet pet) {
         System.out.println("Hello, " + pet.getNickName());
