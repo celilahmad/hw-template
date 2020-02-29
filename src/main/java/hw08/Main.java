@@ -1,7 +1,5 @@
 package hw08;
 
-import java.util.Arrays;
-
 public class Main {
 
 
