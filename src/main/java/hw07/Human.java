@@ -1,12 +1,15 @@
 package hw07;
 
-public abstract class Human {
+import java.util.HashMap;
+import java.util.Map;
+
+public class Human {
 
     private String name;
     private String surname;
     private int yearOfBirth;
     private int iq = (int) (Math.random() * 100 + 1);
-    private String[][] schedule = new String[7][2];
+    private Map<String, String> schedule = new HashMap<>();
     private Family family;
 
     public Human() {
@@ -20,31 +23,14 @@ public abstract class Human {
 
     }
 
-    public Human(String name, String surname, int yearOfBirth, int iq) {
+    public Human(String name, String surname, int yearOfBirth, int iq, HashMap<String,String> schedule) {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
         this.iq = iq;
-
+        this.schedule=schedule;
 
     }
-
-    /*public String isFeed(boolean feedTime){
-        //pet.setTrickLevel((int)(Math.random()*100+1));
-        if (feedTime==false){
-            if (pet.getTrickLevel()>50){
-                System.out.println("Trick level: " + pet.getTrickLevel());
-                return "Hm... I will feed " + pet.getNickName();
-            }else{
-                System.out.println("Trick level: " +pet.getTrickLevel());
-                return "I think " + pet.getNickName() + " is not hungry.";
-            }
-        }else{
-            return "Feeding";
-        }
-
-
-    }*/
 
     public void greetPet(Pet pet) {
         System.out.println("Hello, " + pet.getNickName());
@@ -97,12 +83,11 @@ public abstract class Human {
         this.iq = iq;
     }
 
-
-    public String[][] getSchedule() {
+    public Map<String, String> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(Map<String, String> schedule) {
         this.schedule = schedule;
     }
 

@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 public class RoboCat extends Pet {
 
-    Species roby = Species.UNKNOWN;
+    Species species;
 
     public RoboCat(String nickName, int age, String[] habbits) {
 
         super(nickName, age, habbits);
+        this.species=Species.UNKNOWN;
 
     }
 
@@ -19,7 +20,7 @@ public class RoboCat extends Pet {
 
     @Override
     public String toString() {
-        return roby + "{" +
+        return species + "{" +
                 "nickName='" + getNickName() + '\'' +
                 ", age=" + getAge() +
                 ", habbits=" + Arrays.toString(getHabbits()) +

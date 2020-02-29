@@ -1,11 +1,8 @@
 package hw07;
 
-
 public class Main {
 
-
     public static void main(String[] args) {
-
 
         Dog dog1 = new Dog("Toplan", 3, new String[]{"eating", "drinking", "running"});
 
@@ -32,7 +29,6 @@ public class Main {
 
         Woman woman = new Woman("Emily", "Clarke", 1985);
         woman.makeUp();
-
 
     }
 }

@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 public class Fish extends Pet {
 
-    Species fishy = Species.FISH;
+    Species species;
 
     public Fish(String nickName, int age, String[] habbits) {
         super(nickName, age, habbits);
+        this.species=Species.FISH;
     }
 
     @Override
@@ -17,7 +18,7 @@ public class Fish extends Pet {
 
     @Override
     public String toString() {
-        return fishy + "{" +
+        return species + "{" +
                 "nickName='" + getNickName() + '\'' +
                 ", age=" + getAge() +
                 ", habbits=" + Arrays.toString(getHabbits()) +

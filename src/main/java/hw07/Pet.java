@@ -14,12 +14,10 @@ public abstract class Pet {
     }
 
     public Pet(String nickName) {
-        //this.species = species;
         this.nickName = nickName;
     }
 
     public Pet(String nickName, int age, String[] habbits) {
-        //this.species = species;
         this.nickName = nickName;
         this.age = age;
         this.habbits = habbits;
