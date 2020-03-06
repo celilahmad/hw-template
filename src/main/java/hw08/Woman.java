@@ -1,6 +1,6 @@
 package hw08;
 
-public class Woman extends Human {
+public final class Woman extends Human {
 
     public Woman(String name, String surname, int yearOfBirth) {
         super(name, surname, yearOfBirth);

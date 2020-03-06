@@ -2,8 +2,6 @@ package hw08;
 
 public class Dog extends Pet {
 
-    Species species;
-
     public Dog(String nickName, int age) {
         super(nickName, age);
         this.species=Species.DOG;

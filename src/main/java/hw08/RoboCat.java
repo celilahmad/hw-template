@@ -2,8 +2,6 @@ package hw08;
 
 public class RoboCat extends Pet {
 
-    Species species;
-
     public RoboCat(String nickName, int age) {
         super(nickName, age);
         this.species=Species.ROBOCAT;

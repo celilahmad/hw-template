@@ -5,7 +5,7 @@ import java.util.Set;
 
 public abstract class Pet {
 
-    private Species species;
+    protected Species species;
     private String nickName;
     private int age;
     private int trickLevel = (int) (Math.random() * 100 + 1);

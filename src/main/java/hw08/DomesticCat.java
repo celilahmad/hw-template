@@ -2,8 +2,6 @@ package hw08;
 
 public class DomesticCat extends Pet {
 
-    Species species;
-
     public DomesticCat(String nickName, int age) {
         super(nickName, age);
         this.species=Species.DOMESTICCAT;
