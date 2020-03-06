@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class RoboCat extends Pet {
 
-    Species species;
-
     public RoboCat(String nickName, int age, String[] habbits) {
 
         super(nickName, age, habbits);

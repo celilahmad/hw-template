@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class DomesticCat extends Pet {
 
-    Species species;
-
     public DomesticCat(String nickName, int age, String[] habbits) {
         super(nickName, age, habbits);
         this.species=Species.DOMESTICCAT;
