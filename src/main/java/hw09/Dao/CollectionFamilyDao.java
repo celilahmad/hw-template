@@ -11,13 +11,6 @@ import java.util.stream.Collectors;
 
 public class CollectionFamilyDao implements FamilyDao<Family> {
 
-   /* private List<Family> family;
-    public CollectionFamilyDao() {
-    }
-
-    public CollectionFamilyDao(List<Family> family) {
-        this.family = family;
-    }*/
 
     Human child1 = new Human("Jamilla", "Naek", 1990);
     Human child2 = new Human("Ali", "Naek", 1992);
@@ -64,7 +57,7 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     @Override
     public boolean saveFamily(Family family) {
-        if (getAllFamilies().remove(family)) return true;
+        if (getAllFamilies().add(family)) return true;
         else return false;
     }
 }

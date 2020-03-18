@@ -1,5 +1,7 @@
 package hw09.Entity;
 
+import hw09.Pet.Pet;
+
 import java.util.HashMap;
 import java.util.Map;
 

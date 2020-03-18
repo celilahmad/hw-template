@@ -4,8 +4,8 @@ public class Main {
 
 
     public static void main(String[] args){
-        FamilyController familyController=new FamilyController();
 
+        FamilyController familyController=new FamilyController();
         familyController.getAllFamilies();
 
         familyController.getFamilyByIndex(1);

@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class FamilyService{
-    FamilyDao dao = new CollectionFamilyDao();
-
-
+    FamilyDao<Family> dao = new CollectionFamilyDao();
 
     public List<Family> getAllFamilies() {
         return dao.getAllFamilies();
