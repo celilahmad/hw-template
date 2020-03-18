@@ -3,7 +3,7 @@ package hw09;
 import hw09.Entity.Family;
 
 public class FamilyController {
-    FamilyService familyService;
+    FamilyService familyService=new FamilyService();
 
     public void getAllFamilies(){
         for (Family f: familyService.getAllFamilies()){
@@ -18,7 +18,8 @@ public class FamilyController {
 
     public void deleteFamily(int i) {
         System.out.println("Family index number " + i + " deleting!");
-        familyService.deleteFamily(i);
+        System.out.println("Remaining families");
+        System.out.println(familyService.deleteFamily(i));
     }
 
     public void deleteFamily(Family fam) {

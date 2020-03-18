@@ -3,10 +3,8 @@ package hw09.Dao;
 import hw09.Entity.Family;
 import hw09.Entity.Human;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class CollectionFamilyDao implements FamilyDao<Family> {
@@ -39,14 +37,23 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     }
 
     @Override
-    public Optional<Family> getFamilyByIndex(int index) {
-        return getAllFamilies().stream().filter(s -> s.getId() == index).findFirst();
+    public List<Family> getFamilyByIndex(int index) {
+        return getAllFamilies().stream().filter(s -> s.getId() == index).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Family> getAllBy(Predicate<Family> p) {
+        return getAllFamilies().stream().filter(p).collect(Collectors.toList());
     }
 
     @Override
     public List<Family> deleteFamily(int index) {
-        return getAllFamilies().stream().filter(s -> s.getId() != index).collect(Collectors.toList());
+        List<Family> newList = new ArrayList<>();
+        newList.addAll(getAllBy((s -> s.getId() != index)));
+        return newList;
     }
+
+
 
     @Override
     public boolean deleteFamily(Family family) {

@@ -108,11 +108,8 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", yearOfBirth=" + yearOfBirth +
-                ", schedule=" + schedule.toString() +
-                '}' + "\n";
+        return "name='" + name + '\'' +
+                ", surname='" + surname + '\''
+                 + "\n";
     }
 }

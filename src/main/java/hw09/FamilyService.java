@@ -15,7 +15,7 @@ public class FamilyService{
     }
 
 
-    public Optional<Family> getFamilyByIndex(int index) {
+    public List<Family> getFamilyByIndex(int index) {
         return dao.getFamilyByIndex(index);
     }
 

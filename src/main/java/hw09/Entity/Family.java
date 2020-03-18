@@ -121,7 +121,6 @@ public class Family {
                 "mother=" + mother +
                 ", father=" + father +
                 ", children=" + children.toString() +
-                ", pet=" + pet +
                 '}';
     }
 

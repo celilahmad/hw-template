@@ -8,9 +8,10 @@ public class Main {
         FamilyController familyController=new FamilyController();
         familyController.getAllFamilies();
 
-        familyController.getFamilyByIndex(1);
+        familyController.getFamilyByIndex(2);
 
         familyController.deleteFamily(2);
+
 
         //familyController.deleteFamily();
 
