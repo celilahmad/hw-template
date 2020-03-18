@@ -1,21 +1,43 @@
 package hw09;
 
+import hw09.Entity.Family;
+import hw09.Entity.Human;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
 
     public static void main(String[] args){
 
         FamilyController familyController=new FamilyController();
+
+        Human child1 = new Human("Danielle", "Naek", 1990);
+        Human child2 = new Human("Max", "Naek", 1992);
+        List<Human> familyChild = Arrays.asList(child1, child2);
+        Family newFamily = new Family(4,new Human("Giovanni", "Cupello"), new Human("Suu","Lee"), familyChild);
+
+
         familyController.getAllFamilies();
 
-        familyController.getFamilyByIndex(2);
+        //familyController.getFamilyByIndex(2);
 
-        familyController.deleteFamily(2);
-
+        //familyController.deleteFamily(2);
+        System.out.println("------------------------");
 
         //familyController.deleteFamily();
 
-        //familyController.save();
+        familyController.save(newFamily);
+
+        System.out.println("------------------------");
+
+        ///familyController.getAllFamilies();
+
+        System.out.println("------------------------");
+
+        //familyController.getAllFamilies();
+
 
     /*    Family family1 = new Family();
         Family family2 = new Family();

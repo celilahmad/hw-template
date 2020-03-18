@@ -30,7 +30,8 @@ public class FamilyService{
     }
 
 
-    public boolean saveFamily(Family family) {
+    public List<Family> saveFamily(Family family) {
         return dao.saveFamily(family);
+
     }
 }

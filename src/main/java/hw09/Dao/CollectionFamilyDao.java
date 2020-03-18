@@ -25,15 +25,13 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     Family family2 = new Family(2,new Human("Alan", "Walker"), new Human("Adriana","Lima"), familyChild2);
     Family family3 = new Family(3,new Human("Michael", "Jackson"), new Human("Nicky","Minaj"), familyChild3);
 
-
+    List<Family> families = new ArrayList<>();
 
     @Override
     public List<Family> getAllFamilies() {
-        List<Family> allFamilies = new ArrayList<>();
-        allFamilies.add(family1);
-        allFamilies.add(family2);
-        allFamilies.add(family3);
-        return allFamilies;
+
+       families.addAll(Arrays.asList(family1,family2,family3));
+       return families;
     }
 
     @Override
@@ -63,8 +61,12 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     }
 
     @Override
-    public boolean saveFamily(Family family) {
-        if (getAllFamilies().add(family)) return true;
-        else return false;
+    public List<Family> saveFamily(Family family) {
+        families.add(family);
+        return families;
+        //return families.add(family);
+
     }
+
+
 }

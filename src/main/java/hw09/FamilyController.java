@@ -27,6 +27,12 @@ public class FamilyController {
     }
 
     public void save(Family fam) {
-        familyService.saveFamily(fam);
+        System.out.println("Saving");
+        for(Family f :familyService.saveFamily(fam)){
+            System.out.println(f);
+        }
+
+
+
     }
 }
