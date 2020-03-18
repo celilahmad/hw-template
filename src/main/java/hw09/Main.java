@@ -12,9 +12,9 @@ public class Main {
 
         familyController.deleteFamily(2);
 
-        familyController.deleteFamily();
+        //familyController.deleteFamily();
 
-        familyController.save();
+        //familyController.save();
 
     /*    Family family1 = new Family();
         Family family2 = new Family();
