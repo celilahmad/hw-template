@@ -69,9 +69,9 @@ public class Family {
     }
 
 
-    public String countFamily() {
+    public int countFamily() {
         int familySize = children.size() + 2;
-        return "Family size is " + familySize;
+        return familySize;
     }
 
     public int getId() {

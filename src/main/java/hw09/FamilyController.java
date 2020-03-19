@@ -12,6 +12,10 @@ public class FamilyController {
 
     }
 
+    public void getFamilies(){
+        getAllFamilies();
+    }
+
     public void getFamilyByIndex(int i) {
         System.out.println(familyService.getFamilyByIndex(i));
     }
@@ -34,5 +38,18 @@ public class FamilyController {
 
 
 
+    }
+
+    public void getFamiliesBiggerThan(int count) {
+        for(Family f : familyService.getFamiliesBiggerThan(count)){
+            System.out.println(f);
+        }
+
+    }
+
+    public void getFamiliesLessThan(int count) {
+        for(Family f : familyService.getFamiliesLessThan(count)){
+            System.out.println(f);
+        }
     }
 }

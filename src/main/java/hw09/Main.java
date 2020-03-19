@@ -21,22 +21,41 @@ public class Main {
 
         familyController.getAllFamilies();
 
-        //familyController.getFamilyByIndex(2);
+        //familyController.getFamilyByIndex(2); done
 
         //familyController.deleteFamily(2);
         System.out.println("------------------------");
 
         //familyController.deleteFamily();
 
-        familyController.save(newFamily);
+        //familyController.save(newFamily); dome
 
-        System.out.println("------------------------");
+        //System.out.println("------------------------");
 
-        ///familyController.getAllFamilies();
+        //familyController.getFamiliesBiggerThan(3); done
 
-        System.out.println("------------------------");
+        //System.out.println("------------------------");
 
-        //familyController.getAllFamilies();
+        //familyController.getFamiliesLessThan(4); done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /*    Family family1 = new Family();

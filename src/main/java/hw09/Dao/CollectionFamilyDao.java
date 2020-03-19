@@ -27,10 +27,13 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     List<Family> families = new ArrayList<>();
 
+
+
     @Override
     public List<Family> getAllFamilies() {
-
-       families.addAll(Arrays.asList(family1,family2,family3));
+        if (families.size()==0){
+            families.addAll(Arrays.asList(family1,family2,family3));
+        }
        return families;
     }
 
@@ -64,7 +67,7 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     public List<Family> saveFamily(Family family) {
         families.add(family);
         return families;
-        //return families.add(family);
+
 
     }
 
