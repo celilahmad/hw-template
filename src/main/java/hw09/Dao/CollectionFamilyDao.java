@@ -49,17 +49,14 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     @Override
     public List<Family> deleteFamily(int index) {
-        List<Family> newList = new ArrayList<>();
-        newList.addAll(getAllBy((s -> s.getId() != index)));
-        return newList;
+        getAllFamilies().remove(index-1);
+        return getAllFamilies();
     }
 
-
-
     @Override
-    public boolean deleteFamily(Family family) {
-        if (getAllFamilies().remove(family)) return true;
-        else return false;
+    public List<Family> deleteFamily(Family family) {
+        getAllFamilies().remove(family);
+        return getAllFamilies();
 
     }
 

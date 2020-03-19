@@ -46,7 +46,7 @@ public class FamilyService{
     }
 
 
-    public boolean deleteFamily(Family family) {
+    public List<Family> deleteFamily(Family family) {
         return dao.deleteFamily(family);
     }
 

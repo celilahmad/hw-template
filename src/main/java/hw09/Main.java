@@ -18,17 +18,25 @@ public class Main {
         List<Human> familyChild = Arrays.asList(child1, child2);
         Family newFamily = new Family(4,new Human("Giovanni", "Cupello"), new Human("Suu","Lee"), familyChild);
 
+        Human mother = new Human("Emily","Blunt");
+        Human father = new Human("Matt","Damon");
+        Family newFamily1 = new Family(mother,father);
+
+        Human bornChild = new Human("Alice", "Eyre");
 
         familyController.getAllFamilies();
 
-        //familyController.getFamilyByIndex(2); done
-
-        //familyController.deleteFamily(2);
         System.out.println("------------------------");
 
-        //familyController.deleteFamily();
+       // familyController.getFamilyByIndex(2); //done
 
-        //familyController.save(newFamily); dome
+        //familyController.save(newFamily); // dome
+
+        System.out.println("------------------------");
+
+        //familyController.deleteFamily(1); //done
+
+        //familyController.deleteFamily(newFamily); done
 
         //System.out.println("------------------------");
 
@@ -39,7 +47,9 @@ public class Main {
         //familyController.getFamiliesLessThan(4); done
 
 
+        //familyController.createNewFamily(mother, father); done
 
+        //familyController.bornChild(newFamily1, "girl");
 
 
 

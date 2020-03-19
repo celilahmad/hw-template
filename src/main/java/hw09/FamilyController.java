@@ -1,6 +1,7 @@
 package hw09;
 
 import hw09.Entity.Family;
+import hw09.Entity.Human;
 
 public class FamilyController {
     FamilyService familyService=new FamilyService();
@@ -22,12 +23,17 @@ public class FamilyController {
 
     public void deleteFamily(int i) {
         System.out.println("Family index number " + i + " deleting!");
-        System.out.println("Remaining families");
-        System.out.println(familyService.deleteFamily(i));
+        System.out.println("Remaining families:");
+        for (Family f: familyService.deleteFamily(i)){
+            System.out.println(f);
+        }
     }
 
     public void deleteFamily(Family fam) {
-        familyService.deleteFamily(fam);
+        System.out.println("Family deleting\nRemaining families:\n");
+        for (Family f: familyService.deleteFamily(fam)){
+            System.out.println(f);
+        }
     }
 
     public void save(Family fam) {
@@ -50,6 +56,23 @@ public class FamilyController {
     public void getFamiliesLessThan(int count) {
         for(Family f : familyService.getFamiliesLessThan(count)){
             System.out.println(f);
+        }
+    }
+
+    public void createNewFamily(Human mother, Human father) {
+        Family fam = new Family(mother, father);
+        for(Family f :familyService.saveFamily(fam)){
+            System.out.println(f);
+        }
+    }
+
+    public void bornChild(Human bornChild) {
+
+    }
+
+    public void bornChild(Family newFamily1, String sex) {
+        if(sex.equals("boy")){
+
         }
     }
 }

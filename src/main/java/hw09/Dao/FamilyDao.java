@@ -15,7 +15,7 @@ public interface FamilyDao<Family> {
 
     List<Family> getAllBy(Predicate<Family> p);
 
-    boolean deleteFamily(Family family);
+    List<Family> deleteFamily(Family family);
 
     List<Family> saveFamily(Family family);
 

@@ -17,6 +17,11 @@ public class Family {
     public Family() {
     }
 
+    public Family(Human mother, Human father) {
+        this.mother = mother;
+        this.father = father;
+    }
+
     public Family(int id, Human mother, Human father, List<Human> children) {
         this.id=id;
         this.mother = mother;
@@ -114,13 +119,21 @@ public class Family {
         this.pet = pet;
     }
 
+    public String haveChildren(){
+        if (children!=null){
+            return ", children=" + children.toString();
+        }else{
+            return ", No child";
+        }
+    }
+
 
     @Override
     public String toString() {
         return "Family{" +
                 "mother=" + mother +
                 ", father=" + father +
-                ", children=" + children.toString() +
+                haveChildren() +
                 '}';
     }
 
