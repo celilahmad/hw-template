@@ -23,4 +23,7 @@ public interface FamilyDao<Family> {
 
     Family addChild(Family family, String human);
 
+    Family adoptChild(Family familyTo, Family familyFrom,  Human child);
+
+    List<Family> deleteChildrenOlderThan(int i);
 }

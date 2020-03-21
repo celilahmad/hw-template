@@ -19,12 +19,12 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     Human boy = new Human("Rocky", "Balboa", 1996);
     Human girl = new Human("Charlize", "Theron", 1998);
-    List<Human> newboy = Arrays.asList(boy);
-    List<Human> newgirl = Arrays.asList(girl);
+    List<Human> newboy = new ArrayList<>(Arrays.asList(boy));
+    List<Human> newgirl = new ArrayList<>(Arrays.asList(girl));
 
-    List<Human> familyChild1 = Arrays.asList(child1);
-    List<Human> familyChild2 = Arrays.asList(child2, child3, child4);
-    List<Human> familyChild3 = Arrays.asList(child5, child6);
+    List<Human> familyChild1 = new ArrayList<>(Arrays.asList(child1));
+    List<Human> familyChild2 = new ArrayList<>(Arrays.asList(child2, child3, child4));
+    List<Human> familyChild3 = new ArrayList<>(Arrays.asList(child5, child6));
 
     Family family1 = new Family(1, new Human("Jack", "Stuard"), new Human("Michele", "Rodriguez"), familyChild1);
     Family family2 = new Family(2, new Human("Alan", "Walker"), new Human("Adriana", "Lima"), familyChild2);
@@ -86,6 +86,22 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
         }
         saveFamily(fam);
         return fam;
+    }
+
+    @Override
+    public Family adoptChild(Family familyTo, Family familyFrom, Human child) {
+        familyTo.setChildren(Arrays.asList(child));
+        familyFrom.getChildren().remove(child);
+        saveFamily(familyTo);
+        return familyTo;
+    }
+
+    @Override
+    public List<Family> deleteChildrenOlderThan(int i) {
+        List<Family> updatedFamily = getAllFamilies();
+        updatedFamily.forEach(n->n.getChildren().removeIf(m->2020- m.getYearOfBirth()>i));
+        return updatedFamily;
+
     }
 
 

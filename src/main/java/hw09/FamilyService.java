@@ -62,4 +62,12 @@ public class FamilyService {
     public Family addChildToFamily(Family newFamily, String child) {
         return dao.addChild(newFamily, child);
     }
+
+    public Family adoptChild(Family newFamily1,Family newFamily, Human child1) {
+        return dao.adoptChild(newFamily1, newFamily, child1);
+    }
+
+    public List<Family> deleteChildrenOlderThan(int i) {
+        return dao.deleteChildrenOlderThan(i);
+    }
 }

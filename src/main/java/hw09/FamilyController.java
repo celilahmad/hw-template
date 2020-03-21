@@ -71,4 +71,16 @@ public class FamilyController {
         System.out.println("New " + sex + " added to family");
         System.out.println(familyService.addChildToFamily(newFamily1, sex));
     }
+
+    public void adoptChild(Family newFamily1, Family newFamily, Human child1) {
+        System.out.println(child1 + " aborted from " + newFamily + " to " + newFamily1);
+        System.out.println(newFamily1 + " renewed");
+        System.out.println(familyService.adoptChild(newFamily1,newFamily, child1));
+    }
+
+    public void deleteAllChildrenOlderThan(int i) {
+        for (Family f : familyService.deleteChildrenOlderThan(i)) {
+            System.out.println(f);
+        }
+    }
 }

@@ -3,6 +3,7 @@ package hw09;
 import hw09.Entity.Family;
 import hw09.Entity.Human;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Main {
 
         Human child1 = new Human("Danielle", "Naek", 1990);
         Human child2 = new Human("Max", "Naek", 1992);
-        List<Human> familyChild = Arrays.asList(child1, child2);
+        List<Human> familyChild = new ArrayList<>(Arrays.asList(child1, child2));
         Family newFamily = new Family(4, new Human("Giovanni", "Cupello"), new Human("Suu", "Lee"), familyChild);
 
         Human mother = new Human("Emily", "Blunt");
@@ -49,7 +50,15 @@ public class Main {
 
         //familyController.createNewFamily(mother, father); done
 
-        familyController.bornChild(newFamily1, "boy"); //done
+        //familyController.bornChild(newFamily1, "boy"); //done
+
+        //familyController.getAllFamilies();
+
+        //familyController.adoptChild(newFamily1,newFamily ,child1); done
+
+        //familyController.deleteAllChildrenOlderThan(25); done
+
+        System.out.println("------------------------");
 
         //familyController.getAllFamilies();
 
