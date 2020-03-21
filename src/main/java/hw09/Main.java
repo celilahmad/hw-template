@@ -33,7 +33,7 @@ public class Main {
 
         //familyController.save(newFamily); // dome
 
-        System.out.println("------------------------");
+        //System.out.println("------------------------");
 
         //familyController.deleteFamily(1); //done
 
@@ -61,6 +61,10 @@ public class Main {
         System.out.println("------------------------");
 
         //familyController.getAllFamilies();
+
+        //familyController.count(); done
+
+        //familyController.getPets(2); done
 
 
 

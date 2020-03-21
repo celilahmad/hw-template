@@ -84,8 +84,8 @@ public abstract class Pet {
         return "{" +
                 "nickName='" + nickName + '\'' +
                 ", age=" + age +
-                ", trickLevel=" + trickLevel +
-                ", habbits=" + habbits.toString() +
+                //", trickLevel=" + trickLevel +
+                //", habbits=" + habbits.toString() +
                 '}';
     }
 }

@@ -2,6 +2,10 @@ package hw09.Dao;
 
 import hw09.Entity.Family;
 import hw09.Entity.Human;
+import hw09.Pet.Dog;
+import hw09.Pet.DomesticCat;
+import hw09.Pet.Fish;
+import hw09.Pet.Pet;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -17,6 +21,19 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     Human child5 = new Human("Max", "Naek", 1997);
     Human child6 = new Human("Taro", "Naek", 1999);
 
+    Dog dog1 = new Dog("Toplan", 2);
+    Dog dog2 = new Dog("Lulu", 1);
+
+    DomesticCat cat1 = new DomesticCat("Tom",3);
+    DomesticCat cat2 = new DomesticCat("Sosu", 1);
+    DomesticCat cat3 = new DomesticCat("Motu", 2);
+
+    Fish fish1 = new Fish("Ozy", 1);
+
+    List<Pet> familyPet1 = new ArrayList<>(Arrays.asList(dog1, cat1));
+    List<Pet> familyPet2 = new ArrayList<>(Arrays.asList(dog2, fish1));
+    List<Pet> familyPet3 = new ArrayList<>(Arrays.asList(cat2, cat3));
+
     Human boy = new Human("Rocky", "Balboa", 1996);
     Human girl = new Human("Charlize", "Theron", 1998);
     List<Human> newboy = new ArrayList<>(Arrays.asList(boy));
@@ -26,9 +43,9 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     List<Human> familyChild2 = new ArrayList<>(Arrays.asList(child2, child3, child4));
     List<Human> familyChild3 = new ArrayList<>(Arrays.asList(child5, child6));
 
-    Family family1 = new Family(1, new Human("Jack", "Stuard"), new Human("Michele", "Rodriguez"), familyChild1);
-    Family family2 = new Family(2, new Human("Alan", "Walker"), new Human("Adriana", "Lima"), familyChild2);
-    Family family3 = new Family(3, new Human("Michael", "Jackson"), new Human("Nicky", "Minaj"), familyChild3);
+    Family family1 = new Family(1, new Human("Jack", "Stuard"), new Human("Michele", "Rodriguez"), familyChild1, familyPet1);
+    Family family2 = new Family(2, new Human("Alan", "Walker"), new Human("Adriana", "Lima"), familyChild2, familyPet2);
+    Family family3 = new Family(3, new Human("Michael", "Jackson"), new Human("Nicky", "Minaj"), familyChild3, familyPet3);
 
     List<Family> families = new ArrayList<>();
 
@@ -101,6 +118,19 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
         List<Family> updatedFamily = getAllFamilies();
         updatedFamily.forEach(n->n.getChildren().removeIf(m->2020- m.getYearOfBirth()>i));
         return updatedFamily;
+
+    }
+
+    @Override
+    public int count() {
+        return getAllFamilies().size();
+    }
+
+    @Override
+    public List<Pet> getPets(int i) {
+        //List<Family> collect = getAllFamilies().stream().filter(p -> p.getId() == i).collect(Collectors.toList());
+        //return getAllBy(p->p.getId()==i).get(i).getPet().stream().collect(Collectors.toList());
+        return getAllFamilies().get(i-1).getPet();
 
     }
 

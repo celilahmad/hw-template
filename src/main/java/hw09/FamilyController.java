@@ -2,6 +2,7 @@ package hw09;
 
 import hw09.Entity.Family;
 import hw09.Entity.Human;
+import hw09.Pet.Pet;
 
 public class FamilyController {
     FamilyService familyService = new FamilyService();
@@ -82,5 +83,16 @@ public class FamilyController {
         for (Family f : familyService.deleteChildrenOlderThan(i)) {
             System.out.println(f);
         }
+    }
+
+    public void count() {
+        System.out.println(familyService.count());
+    }
+
+    public void getPets(int i) {
+        for (Pet p : familyService.getPets(i)){
+            System.out.println(p);
+        }
+
     }
 }

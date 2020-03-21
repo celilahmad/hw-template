@@ -1,6 +1,7 @@
 package hw09.Dao;
 
 import hw09.Entity.Human;
+import hw09.Pet.Pet;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,4 +27,8 @@ public interface FamilyDao<Family> {
     Family adoptChild(Family familyTo, Family familyFrom,  Human child);
 
     List<Family> deleteChildrenOlderThan(int i);
+
+    int count();
+
+    List<Pet> getPets(int i);
 }

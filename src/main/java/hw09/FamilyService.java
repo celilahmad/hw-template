@@ -4,6 +4,7 @@ import hw09.Dao.CollectionFamilyDao;
 import hw09.Dao.FamilyDao;
 import hw09.Entity.Family;
 import hw09.Entity.Human;
+import hw09.Pet.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,5 +70,13 @@ public class FamilyService {
 
     public List<Family> deleteChildrenOlderThan(int i) {
         return dao.deleteChildrenOlderThan(i);
+    }
+
+    public int count() {
+        return dao.count();
+    }
+
+    public List<Pet> getPets(int i) {
+        return dao.getPets(i);
     }
 }

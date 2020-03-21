@@ -19,10 +19,10 @@ public class Dog extends Pet {
 
     @Override
     public String toString() {
-        return species + "{" +
-                "nickName='" + getNickName() + '\'' +
-                ", age=" + getAge() +
-                ", habbits=" + getHabbits().toString() +
-                '}';
+        return species +
+                " nickname='" + getNickName() + '\'' +
+                ", age=" + getAge()
+                //", habbits=" + getHabbits().toString() +
+                ;
     }
 }

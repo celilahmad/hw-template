@@ -14,10 +14,10 @@ public class RoboCat extends Pet {
 
     @Override
     public String toString() {
-        return species + "{" +
-                "nickName='" + getNickName() + '\'' +
-                ", age=" + getAge() +
-                ", habbits=" + getHabbits().toString() +
-                '}';
+        return species +
+                " nickName=" + getNickName() + '\'' +
+                ", age=" + getAge()
+                //", habbits=" + getHabbits().toString() +
+                ;
     }
 }

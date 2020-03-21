@@ -12,7 +12,7 @@ public class Family {
     private Human mother;
     private Human father;
     private List<Human> children;
-    private Set<Pet> pet = new HashSet<>();
+    private List<Pet> pet;
     // private Human child;
 
 
@@ -37,6 +37,15 @@ public class Family {
         this.mother = mother;
         this.father = father;
         this.children = children;
+
+    }
+
+    public Family(int id, Human mother, Human father, List<Human> children, List<Pet> pets) {
+        this.id = id;
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+        this.pet=pets;
 
     }
 /*
@@ -123,11 +132,11 @@ public class Family {
         this.children = children;
     }
 
-    public Set<Pet> getPet() {
+    public List<Pet> getPet() {
         return pet;
     }
 
-    public void setPet(Set<Pet> pet) {
+    public void setPet(List<Pet> pet) {
         this.pet = pet;
     }
 
@@ -146,6 +155,13 @@ public class Family {
             return ", No child";
         }
     }
+    public String havePets() {
+        if (pet != null) {
+            return ", pet=" + pet.toString();
+        } else {
+            return ", No Pet";
+        }
+    }
 
 
     @Override
@@ -154,6 +170,7 @@ public class Family {
                 "mother=" + mother +
                 ", father=" + father +
                 haveChildren() +
+                havePets() +
                 '}';
     }
 
