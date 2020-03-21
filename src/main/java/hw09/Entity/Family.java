@@ -13,9 +13,19 @@ public class Family {
     private Human father;
     private List<Human> children;
     private Set<Pet> pet = new HashSet<>();
+    // private Human child;
+
 
     public Family() {
+
     }
+/*
+    public Family(Human mother, Human father, Human human) {
+        this.mother=mother;
+        this.father=father;
+        this.child=human;
+    }*/
+
 
     public Family(Human mother, Human father) {
         this.mother = mother;
@@ -23,10 +33,10 @@ public class Family {
     }
 
     public Family(int id, Human mother, Human father, List<Human> children) {
-        this.id=id;
+        this.id = id;
         this.mother = mother;
         this.father = father;
-        this.children=children;
+        this.children = children;
 
     }
 /*
@@ -53,6 +63,8 @@ public class Family {
 */
 
     int x = 0;
+
+
     public List<Human> addChild(Human h) {
         for (int i = x; i < x + 1; i++) {
             children.add(x, h);
@@ -119,10 +131,18 @@ public class Family {
         this.pet = pet;
     }
 
-    public String haveChildren(){
-        if (children!=null){
+    /*public Human getChild() {
+        return child;
+    }
+
+    public void setChild(Human child) {
+        this.child = child;
+    }*/
+
+    public String haveChildren() {
+        if (children != null) {
             return ", children=" + children.toString();
-        }else{
+        } else {
             return ", No child";
         }
     }

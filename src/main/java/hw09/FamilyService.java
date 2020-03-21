@@ -3,12 +3,13 @@ package hw09;
 import hw09.Dao.CollectionFamilyDao;
 import hw09.Dao.FamilyDao;
 import hw09.Entity.Family;
+import hw09.Entity.Human;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class FamilyService{
+public class FamilyService {
     FamilyDao<Family> dao = new CollectionFamilyDao();
     Family family = new Family();
 
@@ -21,19 +22,20 @@ public class FamilyService{
         return dao.getFamilyByIndex(index);
     }
 
-    public List<Family> getFamiliesBiggerThan(int count){
+    public List<Family> getFamiliesBiggerThan(int count) {
         List<Family> bigger = new ArrayList<>();
-        for (Family f : getAllFamilies()){
-            if (f.countFamily()>count){
+        for (Family f : getAllFamilies()) {
+            if (f.countFamily() > count) {
                 bigger.add(f);
             }
         }
         return bigger;
     }
+
     public List<Family> getFamiliesLessThan(int count) {
         List<Family> lower = new ArrayList<>();
-        for (Family f : getAllFamilies()){
-            if (f.countFamily()<count){
+        for (Family f : getAllFamilies()) {
+            if (f.countFamily() < count) {
                 lower.add(f);
             }
         }
@@ -57,4 +59,7 @@ public class FamilyService{
     }
 
 
+    public Family addChildToFamily(Family newFamily, String child) {
+        return dao.addChild(newFamily, child);
+    }
 }

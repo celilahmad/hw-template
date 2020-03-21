@@ -9,18 +9,18 @@ import java.util.List;
 public class Main {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        FamilyController familyController=new FamilyController();
+        FamilyController familyController = new FamilyController();
 
         Human child1 = new Human("Danielle", "Naek", 1990);
         Human child2 = new Human("Max", "Naek", 1992);
         List<Human> familyChild = Arrays.asList(child1, child2);
-        Family newFamily = new Family(4,new Human("Giovanni", "Cupello"), new Human("Suu","Lee"), familyChild);
+        Family newFamily = new Family(4, new Human("Giovanni", "Cupello"), new Human("Suu", "Lee"), familyChild);
 
-        Human mother = new Human("Emily","Blunt");
-        Human father = new Human("Matt","Damon");
-        Family newFamily1 = new Family(mother,father);
+        Human mother = new Human("Emily", "Blunt");
+        Human father = new Human("Matt", "Damon");
+        Family newFamily1 = new Family(mother, father);
 
         Human bornChild = new Human("Alice", "Eyre");
 
@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println("------------------------");
 
-       // familyController.getFamilyByIndex(2); //done
+        // familyController.getFamilyByIndex(2); //done
 
         //familyController.save(newFamily); // dome
 
@@ -49,7 +49,10 @@ public class Main {
 
         //familyController.createNewFamily(mother, father); done
 
-        //familyController.bornChild(newFamily1, "girl");
+        familyController.bornChild(newFamily1, "boy"); //done
+
+        //familyController.getAllFamilies();
+
 
 
 
@@ -107,7 +110,7 @@ public class Main {
         System.out.println(family1.getChildren());*/
 
         //family.finalize();
-       // family1.deleteChild(child1);
+        // family1.deleteChild(child1);
 
         //System.out.println(family1.getChildren());
 

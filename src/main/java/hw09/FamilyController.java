@@ -4,16 +4,17 @@ import hw09.Entity.Family;
 import hw09.Entity.Human;
 
 public class FamilyController {
-    FamilyService familyService=new FamilyService();
+    FamilyService familyService = new FamilyService();
 
-    public void getAllFamilies(){
-        for (Family f: familyService.getAllFamilies()){
+
+    public void getAllFamilies() {
+        for (Family f : familyService.getAllFamilies()) {
             System.out.println(f);
         }
 
     }
 
-    public void getFamilies(){
+    public void getFamilies() {
         getAllFamilies();
     }
 
@@ -24,55 +25,50 @@ public class FamilyController {
     public void deleteFamily(int i) {
         System.out.println("Family index number " + i + " deleting!");
         System.out.println("Remaining families:");
-        for (Family f: familyService.deleteFamily(i)){
+        for (Family f : familyService.deleteFamily(i)) {
             System.out.println(f);
         }
     }
 
     public void deleteFamily(Family fam) {
         System.out.println("Family deleting\nRemaining families:\n");
-        for (Family f: familyService.deleteFamily(fam)){
+        for (Family f : familyService.deleteFamily(fam)) {
             System.out.println(f);
         }
     }
 
     public void save(Family fam) {
         System.out.println("Saving");
-        for(Family f :familyService.saveFamily(fam)){
+        for (Family f : familyService.saveFamily(fam)) {
             System.out.println(f);
         }
-
 
 
     }
 
     public void getFamiliesBiggerThan(int count) {
-        for(Family f : familyService.getFamiliesBiggerThan(count)){
+        for (Family f : familyService.getFamiliesBiggerThan(count)) {
             System.out.println(f);
         }
 
     }
 
     public void getFamiliesLessThan(int count) {
-        for(Family f : familyService.getFamiliesLessThan(count)){
+        for (Family f : familyService.getFamiliesLessThan(count)) {
             System.out.println(f);
         }
     }
 
     public void createNewFamily(Human mother, Human father) {
         Family fam = new Family(mother, father);
-        for(Family f :familyService.saveFamily(fam)){
+        for (Family f : familyService.saveFamily(fam)) {
             System.out.println(f);
         }
     }
 
-    public void bornChild(Human bornChild) {
-
-    }
 
     public void bornChild(Family newFamily1, String sex) {
-        if(sex.equals("boy")){
-
-        }
+        System.out.println("New " + sex + " added to family");
+        System.out.println(familyService.addChildToFamily(newFamily1, sex));
     }
 }
