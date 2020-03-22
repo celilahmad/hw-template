@@ -79,4 +79,8 @@ public class FamilyService {
     public List<Pet> getPets(int i) {
         return dao.getPets(i);
     }
+
+    public Family addPets(int i, Pet pet) {
+        return dao.addPets(i, pet);
+    }
 }

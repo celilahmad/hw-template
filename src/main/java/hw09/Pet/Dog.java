@@ -7,6 +7,7 @@ public class Dog extends Pet {
         this.species= Species.DOG;
     }
 
+
     @Override
     public void respond() {
         System.out.println("Dog is responding: huaw huaw!");

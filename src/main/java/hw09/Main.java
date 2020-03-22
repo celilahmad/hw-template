@@ -2,6 +2,8 @@ package hw09;
 
 import hw09.Entity.Family;
 import hw09.Entity.Human;
+import hw09.Pet.Fish;
+import hw09.Pet.Pet;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +26,8 @@ public class Main {
         Family newFamily1 = new Family(mother, father);
 
         Human bornChild = new Human("Alice", "Eyre");
+        Pet fish2 = new Fish("Starfish", 1);
+        Pet fish3 = new Fish("Nino", 1);
 
         familyController.getAllFamilies();
 
@@ -31,7 +35,7 @@ public class Main {
 
         // familyController.getFamilyByIndex(2); //done
 
-        //familyController.save(newFamily); // dome
+        familyController.save(newFamily); // dome
 
         //System.out.println("------------------------");
 
@@ -62,9 +66,19 @@ public class Main {
 
         //familyController.getAllFamilies();
 
-        //familyController.count(); done
+        //familyController.count(); //done
 
-        //familyController.getPets(2); done
+        //familyController.getPets(2); //done
+
+        //familyController.addPets(2, fish2); //done
+
+        //familyController.addPets(3, fish3); //done
+
+        //familyController.addPets(4, fish3); //done
+
+        System.out.println("----------------");
+
+        familyController.getAllFamilies();
 
 
 

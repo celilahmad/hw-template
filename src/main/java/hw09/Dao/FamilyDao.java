@@ -31,4 +31,6 @@ public interface FamilyDao<Family> {
     int count();
 
     List<Pet> getPets(int i);
+
+    Family addPets(int i, Pet pet);
 }

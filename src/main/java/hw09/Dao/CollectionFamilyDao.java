@@ -10,6 +10,7 @@ import hw09.Pet.Pet;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CollectionFamilyDao implements FamilyDao<Family> {
 
@@ -48,6 +49,7 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     Family family3 = new Family(3, new Human("Michael", "Jackson"), new Human("Nicky", "Minaj"), familyChild3, familyPet3);
 
     List<Family> families = new ArrayList<>();
+    //List<Pet> pets = new ArrayList<>();
 
 
     @Override
@@ -128,9 +130,25 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     @Override
     public List<Pet> getPets(int i) {
-        //List<Family> collect = getAllFamilies().stream().filter(p -> p.getId() == i).collect(Collectors.toList());
-        //return getAllBy(p->p.getId()==i).get(i).getPet().stream().collect(Collectors.toList());
-        return getAllFamilies().get(i-1).getPet();
+        Family allBy = getAllBy(p -> p.getId() == i).get(0);
+        return allBy.getPet();
+        //return getAllFamilies().get(i-1).getPet();
+
+    }
+
+    @Override
+    public Family addPets(int i, Pet pet) {
+
+        Family fam = getAllBy(p -> p.getId() == i).get(0);
+
+        List<Pet> pet1 = fam.getPet();
+        if (pet1==null){
+            ArrayList<Pet> pets = new ArrayList<>(Arrays.asList(pet));
+            fam.setPet(pets);
+        }else{
+            pet1.add(pet);
+        }
+        return fam;
 
     }
 

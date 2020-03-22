@@ -2,6 +2,7 @@ package hw09;
 
 import hw09.Entity.Family;
 import hw09.Entity.Human;
+import hw09.Pet.Fish;
 import hw09.Pet.Pet;
 
 public class FamilyController {
@@ -94,5 +95,10 @@ public class FamilyController {
             System.out.println(p);
         }
 
+    }
+
+    public void addPets(int i, Pet pet) {
+        System.out.println("New pet added to family");
+        System.out.println(familyService.addPets(i, pet));
     }
 }

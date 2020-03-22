@@ -2,6 +2,7 @@ package hw09.Entity;
 
 import hw09.Pet.Pet;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,6 +14,7 @@ public class Family {
     private Human father;
     private List<Human> children;
     private List<Pet> pet;
+    private Pet pets;
     // private Human child;
 
 
@@ -133,12 +135,21 @@ public class Family {
     }
 
     public List<Pet> getPet() {
-        return pet;
+        return this.pet;
     }
 
     public void setPet(List<Pet> pet) {
         this.pet = pet;
     }
+
+/*    public Pet getPets() {
+        return pets;
+    }
+
+    public Family setPets(Pet pets) {
+        this.pet.add(pets);
+        return Family.this;
+    }*/
 
     /*public Human getChild() {
         return child;
@@ -166,11 +177,11 @@ public class Family {
 
     @Override
     public String toString() {
-        return "Family{" +
-                "mother=" + mother +
+        return "Family{ID:"+ id +
+                " mother=" + mother +
                 ", father=" + father +
                 haveChildren() +
-                havePets() +
+                " pets=" + pet +
                 '}';
     }
 
