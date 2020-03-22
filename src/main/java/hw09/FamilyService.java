@@ -8,7 +8,7 @@ import hw09.Pet.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 public class FamilyService {
     FamilyDao<Family> dao = new CollectionFamilyDao();
@@ -53,12 +53,10 @@ public class FamilyService {
         return dao.deleteFamily(family);
     }
 
-
     public List<Family> saveFamily(Family family) {
         return dao.saveFamily(family);
 
     }
-
 
     public Family addChildToFamily(Family newFamily, String child) {
         return dao.addChild(newFamily, child);

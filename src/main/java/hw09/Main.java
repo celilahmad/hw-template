@@ -33,7 +33,7 @@ public class Main {
 
         System.out.println("------------------------");
 
-        // familyController.getFamilyByIndex(2); //done
+        familyController.getFamilyByIndex(2); //done
 
         //System.out.println("------------------------");
 
