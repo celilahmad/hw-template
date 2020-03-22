@@ -10,7 +10,7 @@ import hw09.Pet.Pet;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class CollectionFamilyDao implements FamilyDao<Family> {
 
@@ -49,7 +49,6 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     Family family3 = new Family(3, new Human("Michael", "Jackson"), new Human("Nicky", "Minaj"), familyChild3, familyPet3);
 
     List<Family> families = new ArrayList<>();
-    //List<Pet> pets = new ArrayList<>();
 
 
     @Override
@@ -72,7 +71,10 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     @Override
     public List<Family> deleteFamily(int index) {
-        getAllFamilies().remove(index - 1);
+        if (getAllFamilies().stream().anyMatch(p -> p.getId() == index)){
+            getAllFamilies().remove(getAllBy(p -> p.getId() == index).get(0));
+        }
+
         return getAllFamilies();
     }
 

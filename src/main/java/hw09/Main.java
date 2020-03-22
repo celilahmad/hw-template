@@ -35,13 +35,17 @@ public class Main {
 
         // familyController.getFamilyByIndex(2); //done
 
-        familyController.save(newFamily); // dome
+        //System.out.println("------------------------");
+
+        //familyController.save(newFamily); // dome
 
         //System.out.println("------------------------");
 
-        //familyController.deleteFamily(1); //done
+        //familyController.deleteFamily(15); //done
 
-        //familyController.deleteFamily(newFamily); done
+        //System.out.println("------------------------");
+
+        //familyController.deleteFamily(newFamily); //done
 
         //System.out.println("------------------------");
 
@@ -51,140 +55,51 @@ public class Main {
 
         //familyController.getFamiliesLessThan(4); done
 
+        //System.out.println("------------------------");
 
         //familyController.createNewFamily(mother, father); done
 
+        //System.out.println("------------------------");
+
         //familyController.bornChild(newFamily1, "boy"); //done
+
+        //System.out.println("------------------------");
 
         //familyController.getAllFamilies();
 
+        //System.out.println("------------------------");
+
         //familyController.adoptChild(newFamily1,newFamily ,child1); done
+
+        //System.out.println("------------------------");
 
         //familyController.deleteAllChildrenOlderThan(25); done
 
-        System.out.println("------------------------");
+        //System.out.println("------------------------");
 
         //familyController.getAllFamilies();
 
         //familyController.count(); //done
 
+        //System.out.println("------------------------");
+
         //familyController.getPets(2); //done
+
+        //System.out.println("------------------------");
 
         //familyController.addPets(2, fish2); //done
 
+        //System.out.println("------------------------");
+
         //familyController.addPets(3, fish3); //done
+
+        //System.out.println("------------------------");
 
         //familyController.addPets(4, fish3); //done
 
-        System.out.println("----------------");
+        //System.out.println("----------------");
 
-        familyController.getAllFamilies();
+       // familyController.getAllFamilies();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*    Family family1 = new Family();
-        Family family2 = new Family();
-        Family family3 = new Family();
-
-
-        Human child1 = new Human("Jamilla", "Naek", 1990);
-        child1.getSchedule().put("Monday", "work");
-        child1.getSchedule().put("Tuesday", "work");
-
-        Human child2 = new Human("Ali", "Naek", 1992);
-        child2.getSchedule().put("Monday", "school");
-        child2.getSchedule().put("Tuesday", "watch tv");
-
-        Human child3 = new Human("Danielle", "Naek", 1993);
-        child3.getSchedule().put("Monday", "gym");
-        child3.getSchedule().put("Tuesday", "fishing");
-
-        Human child4 = new Human("Giovanni", "Naek", 1995);
-        child4.getSchedule().put("Monday", "work");
-        child4.getSchedule().put("Tuesday", "pub");
-
-        Human child5 = new Human("Max", "Naek", 1997);
-        child5.getSchedule().put("Monday", "fishing");
-        child5.getSchedule().put("Tuesday", "sleep");
-
-        Human child6 = new Human("Taro", "Naek", 1999);
-        child6.getSchedule().put("Monday", "working");
-        child6.getSchedule().put("Tuesday", "sleep");
-
-        family1.addChild(child1);
-        family2.addChild(child2);
-        family2.addChild(child3);
-        family2.addChild(child4);
-        family3.addChild(child5);
-        family3.addChild(child6);
-
-        System.out.println(family1.getChildren());*/
-
-        //family.finalize();
-        // family1.deleteChild(child1);
-
-        //System.out.println(family1.getChildren());
-
-        //family1.deleteChild(2);
-
-        //System.out.println(family1.getChildren());
-
-        //System.out.println(family1.countFamily());
-
-        //System.out.println();
-
-        /*Dog dog1 = new Dog("Toplan", 3);
-        dog1.getHabbits().add("playing");
-        dog1.getHabbits().add("barking");
-
-        Fish fish1 = new Fish("Buble", 1);
-        fish1.getHabbits().add("swimming");
-        fish1.getHabbits().add("eating");
-
-        DomesticCat cat1 = new DomesticCat("Tom", 2);
-        cat1.getHabbits().add("eating");
-        cat1.getHabbits().add("sleeping");
-
-        RoboCat rob1 = new RoboCat("Matrix", 5);
-        rob1.getHabbits().add("Cleaning houses");
-
-
-        System.out.println(dog1);
-        System.out.println(fish1);
-        System.out.println(cat1);
-        System.out.println(rob1);
-
-        System.out.println();*/
-
-        /*dog1.respond();
-        cat1.foul();
-        fish1.respond();
-
-        Man man = new Man("John", "Leon", 1960);
-        man.greetPet();
-        man.repairCar();
-
-        Woman woman = new Woman("Emily", "Clarke", 1985);
-        woman.makeUp();*/
-
-        /*family1.getPet().add(dog1);
-        family1.getPet().add(cat1);
-        System.out.println(family1.getPet());*/
     }
 }

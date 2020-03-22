@@ -3,9 +3,7 @@ package hw09.Dao;
 import hw09.Entity.Human;
 import hw09.Pet.Pet;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 
 public interface FamilyDao<Family> {

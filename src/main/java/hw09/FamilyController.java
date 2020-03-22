@@ -25,11 +25,16 @@ public class FamilyController {
     }
 
     public void deleteFamily(int i) {
-        System.out.println("Family index number " + i + " deleting!");
-        System.out.println("Remaining families:");
-        for (Family f : familyService.deleteFamily(i)) {
-            System.out.println(f);
+        if (familyService.dao.getAllFamilies().stream().anyMatch(p->p.getId()==i)){
+            System.out.println("Family index number " + i + " deleting!");
+            System.out.println("Remaining families:");
+            for (Family f : familyService.deleteFamily(i)) {
+                System.out.println(f);
+            }
+        }else{
+            System.out.println("Not such Family id");
         }
+
     }
 
     public void deleteFamily(Family fam) {

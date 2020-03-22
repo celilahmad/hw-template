@@ -2,10 +2,8 @@ package hw09.Entity;
 
 import hw09.Pet.Pet;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 public class Family {
 
@@ -15,19 +13,11 @@ public class Family {
     private List<Human> children;
     private List<Pet> pet;
     private Pet pets;
-    // private Human child;
 
 
     public Family() {
 
     }
-/*
-    public Family(Human mother, Human father, Human human) {
-        this.mother=mother;
-        this.father=father;
-        this.child=human;
-    }*/
-
 
     public Family(Human mother, Human father) {
         this.mother = mother;
@@ -50,28 +40,7 @@ public class Family {
         this.pet=pets;
 
     }
-/*
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null)
-            return false;
-        if (obj.getClass() != this.getClass())
-            return false;
-        Family family = (Family) obj;
-        return (this.mother == family.mother && this.father == family.father);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    protected void finalize(){
-        System.out.println("Finalize method called. Deleting!!!");
-    }
-*/
 
     int x = 0;
 
@@ -142,22 +111,6 @@ public class Family {
         this.pet = pet;
     }
 
-/*    public Pet getPets() {
-        return pets;
-    }
-
-    public Family setPets(Pet pets) {
-        this.pet.add(pets);
-        return Family.this;
-    }*/
-
-    /*public Human getChild() {
-        return child;
-    }
-
-    public void setChild(Human child) {
-        this.child = child;
-    }*/
 
     public String haveChildren() {
         if (children != null) {
@@ -166,13 +119,13 @@ public class Family {
             return ", No child";
         }
     }
-    public String havePets() {
+/*    public String havePets() {
         if (pet != null) {
             return ", pet=" + pet.toString();
         } else {
             return ", No Pet";
         }
-    }
+    }*/
 
 
     @Override
