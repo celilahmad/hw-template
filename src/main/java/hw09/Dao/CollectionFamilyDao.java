@@ -2,6 +2,7 @@ package hw09.Dao;
 
 import hw09.Entity.Family;
 import hw09.Entity.Human;
+import hw09.Main;
 import hw09.Pet.Dog;
 import hw09.Pet.DomesticCat;
 import hw09.Pet.Fish;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 public class CollectionFamilyDao implements FamilyDao<Family> {
 
 
-    Human child1 = new Human("Jamilla", "Naek", 1990);
+    /*Human child1 = new Human("Jamilla", "Naek", 1990);
     Human child2 = new Human("Ali", "Naek", 1992);
     Human child3 = new Human("Danielle", "Naek", 1993);
     Human child4 = new Human("Giovanni", "Naek", 1995);
@@ -47,15 +48,17 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     Family family1 = new Family(1, new Human("Jack", "Stuard"), new Human("Michele", "Rodriguez"), familyChild1, familyPet1);
     Family family2 = new Family(2, new Human("Alan", "Walker"), new Human("Adriana", "Lima"), familyChild2, familyPet2);
     Family family3 = new Family(3, new Human("Michael", "Jackson"), new Human("Nicky", "Minaj"), familyChild3, familyPet3);
+*/
+    Human boy = new Human("Rocky", "Balboa", 1996);
+    Human girl = new Human("Charlize", "Theron", 1998);
+    List<Human> newboy = new ArrayList<>(Arrays.asList(boy));
+    List<Human> newgirl = new ArrayList<>(Arrays.asList(girl));
 
     List<Family> families = new ArrayList<>();
 
 
     @Override
     public List<Family> getAllFamilies() {
-        if (families.size() == 0) {
-            families.addAll(Arrays.asList(family1, family2, family3));
-        }
         return families;
     }
 
@@ -86,23 +89,20 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     }
 
     @Override
-    public List<Family> saveFamily(Family family) {
+    public Family saveFamily(Family family) {
         families.add(family);
-        return families;
-
-
+        return family;
     }
 
     @Override
     public Family addChild(Family family, String child) {
         Family fam = new Family();
+        fam.setId(family.getId());
+        fam.setMother(family.getMother());
+        fam.setFather(family.getFather());
         if (child.equals("boy")) {
-            fam.setMother(family.getMother());
-            fam.setFather(family.getFather());
             fam.setChildren(newboy);
         } else if (child.equals("girl")) {
-            fam.setMother(family.getMother());
-            fam.setFather(family.getFather());
             fam.setChildren(newgirl);
         }
         saveFamily(fam);

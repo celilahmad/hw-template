@@ -19,6 +19,12 @@ public class Family {
 
     }
 
+    public Family(int id, Human mother, Human father) {
+        this.id = id;
+        this.mother = mother;
+        this.father = father;
+    }
+
     public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;

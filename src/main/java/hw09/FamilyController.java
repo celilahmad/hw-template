@@ -10,14 +10,13 @@ public class FamilyController {
 
 
     public void getAllFamilies() {
+        if (familyService.getAllFamilies().isEmpty()){
+            System.out.println("Not any Family in List");
+        }
         for (Family f : familyService.getAllFamilies()) {
             System.out.println(f);
         }
 
-    }
-
-    public void getFamilies() {
-        getAllFamilies();
     }
 
     public void getFamilyByIndex(int i) {
@@ -46,9 +45,10 @@ public class FamilyController {
 
     public void save(Family fam) {
         System.out.println("Saving");
-        for (Family f : familyService.saveFamily(fam)) {
+        /*for (Family f : familyService.saveFamily(fam)) {
             System.out.println(f);
-        }
+        }*/
+        System.out.println(familyService.saveFamily(fam));
 
 
     }
@@ -67,12 +67,13 @@ public class FamilyController {
     }
 
     public void createNewFamily(Human mother, Human father) {
-        Family fam = new Family(mother, father);
-        for (Family f : familyService.saveFamily(fam)) {
-            System.out.println(f);
-        }
-    }
+        Family fam1 = new Family(mother, father);
+        int id = familyService.getAllFamilies().size()+1;
+        Family fam = new Family(id, mother,father);
+        familyService.saveFamily(fam);
+        System.out.println(fam);
 
+    }
 
     public void bornChild(Family newFamily1, String sex) {
         System.out.println("New " + sex + " added to family");
@@ -80,9 +81,8 @@ public class FamilyController {
     }
 
     public void adoptChild(Family newFamily1, Family newFamily, Human child1) {
-        System.out.println(child1 + " aborted from " + newFamily + " to " + newFamily1);
-        System.out.println(newFamily1 + " renewed");
-        System.out.println(familyService.adoptChild(newFamily1,newFamily, child1));
+        System.out.println(child1 + " aborted from " + newFamily + " \nto " + newFamily1);
+        System.out.println("Renewed \n" + familyService.adoptChild(newFamily1,newFamily, child1));
     }
 
     public void deleteAllChildrenOlderThan(int i) {
@@ -92,7 +92,7 @@ public class FamilyController {
     }
 
     public void count() {
-        System.out.println(familyService.count());
+        System.out.println("There are " + familyService.count()+ " families in the List");
     }
 
     public void getPets(int i) {

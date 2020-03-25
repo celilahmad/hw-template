@@ -18,7 +18,7 @@ public interface FamilyDao<Family> {
 
     List<Family> deleteFamily(Family family);
 
-    List<Family> saveFamily(Family family);
+    Family saveFamily(Family family);
 
     Family addChild(Family family, String human);
 

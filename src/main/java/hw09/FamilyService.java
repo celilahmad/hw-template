@@ -53,7 +53,7 @@ public class FamilyService {
         return dao.deleteFamily(family);
     }
 
-    public List<Family> saveFamily(Family family) {
+    public Family saveFamily(Family family) {
         return dao.saveFamily(family);
 
     }
