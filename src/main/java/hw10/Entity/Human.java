@@ -4,12 +4,9 @@ import hw10.Pet.Pet;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Year;
-import java.time.format.DateTimeFormatter;
+
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class Human {
 
@@ -70,7 +67,7 @@ public class Human {
         int yearBirth = Integer.parseInt(array3[2]);
 
         int yearAge;
-        int yearMonth=0;
+        int yearMonth;
         int yearDay;
 
         yearAge= yearNow-yearBirth;
