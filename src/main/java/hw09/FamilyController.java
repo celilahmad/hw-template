@@ -5,8 +5,14 @@ import hw09.Entity.Human;
 import hw09.Pet.Fish;
 import hw09.Pet.Pet;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class FamilyController {
     FamilyService familyService = new FamilyService();
+
+
 
 
     public void getAllFamilies() {
@@ -67,15 +73,16 @@ public class FamilyController {
     }
 
     public void createNewFamily(Human mother, Human father) {
-        Family fam1 = new Family(mother, father);
-        int id = familyService.getAllFamilies().size()+1;
-        Family fam = new Family(id, mother,father);
+        //Family fam1 = new Family(mother, father);
+        //int id = familyService.getAllFamilies().size()+1;
+        Family fam = new Family(mother,father);
         familyService.saveFamily(fam);
         System.out.println(fam);
 
     }
 
     public void bornChild(Family newFamily1, String sex) {
+
         System.out.println("New " + sex + " added to family");
         System.out.println(familyService.addChildToFamily(newFamily1, sex));
     }
@@ -86,6 +93,7 @@ public class FamilyController {
     }
 
     public void deleteAllChildrenOlderThan(int i) {
+        System.out.println("Deleting children older than " + i);
         for (Family f : familyService.deleteChildrenOlderThan(i)) {
             System.out.println(f);
         }

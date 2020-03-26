@@ -59,9 +59,8 @@ public class Main {
 
         Human mother = new Human("Emily", "Blunt");
         Human father = new Human("Matt", "Damon");
-        Family newFamily1 = new Family(5,mother, father);
+        Family newFamily1 = new Family(4,mother, father);
 
-        //Human bornChild = new Human("Alice", "Eyre");
         Pet fish2 = new Fish("Starfish", 1);
         Pet fish3 = new Fish("Nino", 1);
 
@@ -101,14 +100,15 @@ public class Main {
 
         //System.out.println("------------------------");
 
-        familyController.createNewFamily(mother, father); //done
+        //familyController.createNewFamily(mother, father); //done
 
-        System.out.println("------------------------");
+        //System.out.println("------------------------");
 
-        familyController.getAllFamilies();
-        System.out.println("------------------------");
+        //familyController.getAllFamilies();
 
-        familyController.bornChild(newFamily1, "boy"); //done
+        //System.out.println("------------------------");
+
+        //familyController.bornChild(newFamily1, "boy"); //done
 
         //System.out.println("------------------------");
 
@@ -119,6 +119,8 @@ public class Main {
         //familyController.adoptChild(newFamily1,newFamily ,child7); //done
 
         //System.out.println("------------------------");
+
+        //familyController.getAllFamilies();
 
         //familyController.deleteAllChildrenOlderThan(25); //done
 

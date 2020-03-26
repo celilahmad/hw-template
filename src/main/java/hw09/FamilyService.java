@@ -58,8 +58,8 @@ public class FamilyService {
 
     }
 
-    public Family addChildToFamily(Family newFamily, String child) {
-        return dao.addChild(newFamily, child);
+    public Family addChildToFamily(Family newFamily, String sex) {
+        return dao.addChild(newFamily, sex);
     }
 
     public Family adoptChild(Family newFamily1,Family newFamily, Human child1) {

@@ -2,6 +2,7 @@ package hw09.Entity;
 
 import hw09.Pet.Pet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -106,7 +107,10 @@ public class Family {
     }
 
     public void setChildren(List<Human> children) {
-        this.children = children;
+
+            this.children = children;
+
+
     }
 
     public List<Pet> getPet() {
@@ -139,7 +143,7 @@ public class Family {
         return "Family{ID:"+ id +
                 " mother=" + mother +
                 ", father=" + father +
-                haveChildren() +
+                ", children=" + children +
                 " pets=" + pet +
                 '}';
     }

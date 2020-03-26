@@ -20,7 +20,7 @@ public interface FamilyDao<Family> {
 
     Family saveFamily(Family family);
 
-    Family addChild(Family family, String human);
+    Family addChild(Family family, String sex);
 
     Family adoptChild(Family familyTo, Family familyFrom,  Human child);
 
