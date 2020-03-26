@@ -13,8 +13,6 @@ public class FamilyController {
     FamilyService familyService = new FamilyService();
 
 
-
-
     public void getAllFamilies() {
         if (familyService.getAllFamilies().isEmpty()){
             System.out.println("Not any Family in List");
@@ -49,14 +47,9 @@ public class FamilyController {
         }
     }
 
-    public void save(Family fam) {
+    public void save(Family fam){
         System.out.println("Saving");
-        /*for (Family f : familyService.saveFamily(fam)) {
-            System.out.println(f);
-        }*/
         System.out.println(familyService.saveFamily(fam));
-
-
     }
 
     public void getFamiliesBiggerThan(int count) {
@@ -73,8 +66,6 @@ public class FamilyController {
     }
 
     public void createNewFamily(Human mother, Human father) {
-        //Family fam1 = new Family(mother, father);
-        //int id = familyService.getAllFamilies().size()+1;
         Family fam = new Family(mother,father);
         familyService.saveFamily(fam);
         System.out.println(fam);

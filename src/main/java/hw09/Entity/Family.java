@@ -48,9 +48,7 @@ public class Family {
 
     }
 
-
     int x = 0;
-
 
     public List<Human> addChild(Human h) {
         for (int i = x; i < x + 1; i++) {
@@ -107,9 +105,7 @@ public class Family {
     }
 
     public void setChildren(List<Human> children) {
-
             this.children = children;
-
 
     }
 
@@ -120,23 +116,6 @@ public class Family {
     public void setPet(List<Pet> pet) {
         this.pet = pet;
     }
-
-
-    public String haveChildren() {
-        if (children != null) {
-            return ", children=" + children.toString();
-        } else {
-            return ", No child";
-        }
-    }
-/*    public String havePets() {
-        if (pet != null) {
-            return ", pet=" + pet.toString();
-        } else {
-            return ", No Pet";
-        }
-    }*/
-
 
     @Override
     public String toString() {

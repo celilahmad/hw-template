@@ -12,12 +12,11 @@ import java.util.List;
 
 public class FamilyService {
     FamilyDao<Family> dao = new CollectionFamilyDao();
-    Family family = new Family();
+
 
     public List<Family> getAllFamilies() {
         return dao.getAllFamilies();
     }
-
 
     public List<Family> getFamilyByIndex(int index) {
         return dao.getFamilyByIndex(index);
@@ -43,11 +42,9 @@ public class FamilyService {
         return lower;
     }
 
-
     public List<Family> deleteFamily(int index) {
         return dao.deleteFamily(index);
     }
-
 
     public List<Family> deleteFamily(Family family) {
         return dao.deleteFamily(family);
