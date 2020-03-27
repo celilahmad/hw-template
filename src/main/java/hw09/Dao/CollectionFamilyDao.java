@@ -18,8 +18,6 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
     Human boy = new Human("Rocky", "Balboa", 1996);
     Human girl = new Human("Charlize", "Theron", 1998);
-    List<Human> newboy = new ArrayList<>(Arrays.asList(boy));
-    List<Human> newgirl = new ArrayList<>(Arrays.asList(girl));
 
     List<Family> families = new ArrayList<>();
 
