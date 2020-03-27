@@ -6,6 +6,10 @@ import java.util.Map;
 
 public final class Woman extends Human {
 
+    public Woman(String name, String surname, long yearOfBirth, int iq) {
+        super(name, surname, yearOfBirth, iq);
+    }
+
     public Woman(String name, String surname, long yearOfBirth, int iq, HashMap<String, String> schedule) {
         super(name, surname, yearOfBirth, iq, schedule);
     }

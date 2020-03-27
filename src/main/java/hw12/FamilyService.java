@@ -36,6 +36,10 @@ public class FamilyService {
         return getAllFamilies().stream().filter(n->n.countFamily()<count).collect(Collectors.toList());
     }
 
+    public List<Family> getFamiliesEqual(int count) {
+        return getAllFamilies().stream().filter(n->n.countFamily()==count).collect(Collectors.toList());
+    }
+
     public List<Integer> countFamiliesWithMember(){
         return getAllFamilies().stream().map(Family::countFamily).collect(Collectors.toList());
     }

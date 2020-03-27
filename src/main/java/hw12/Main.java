@@ -6,12 +6,15 @@ import hw12.Pet.DomesticCat;
 import hw12.Pet.Fish;
 import hw12.Pet.Pet;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         FamilyController familyController = new FamilyController();
 
@@ -128,11 +131,93 @@ public class Main {
         Pet fish3 = new Fish("Nino", 1, schedule8);
 
 
-        familyController.save(family1);
+       /* familyController.save(family1);
         familyController.save(family2);
         familyController.save(family3);
-
+*/
         System.out.println("------------------------");
+
+        Scanner sc = new Scanner(System.in);
+        String input=sc.nextLine();
+        int integ = Integer.parseInt(sc.nextLine());
+            do {
+
+
+                switch (input) {
+                    case "1":
+                        familyController.save(family1);
+                        familyController.save(family2);
+                        familyController.save(family3);
+                        break;
+                    case "2":
+                        familyController.displayAllFamilies();
+                        break;
+                    case "3":
+                        System.out.println("At least how many members in family you want?");
+                        familyController.getFamiliesBiggerThan(integ);
+                        break;
+                    case "4":
+                        System.out.println("Limit the familiy members with ");
+                        familyController.getFamiliesLessThan(integ);
+                        break;
+                    case "5":
+                        System.out.println("Found excat members of family");
+                        familyController.getFamiliesEqual(integ);
+                        break;
+                    case "6":
+                        System.out.println("Enter mother name");
+                        String name = sc.nextLine();
+                        System.out.println("Enter mother surname");
+                        String surname = sc.nextLine();
+                        System.out.println("Enter mother birth year");
+                        int year = sc.nextInt();
+                        System.out.println("Enter mother birth month");
+                        int month = sc.nextInt();
+                        System.out.println("Enter mother birth day");
+                        int day = sc.nextInt();
+                        System.out.println("Enter mother iq");
+                        int iq = sc.nextInt();
+
+                        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        String date3 = formatter.format(new Date(day, month, year));
+                        Date date2 = formatter.parse(date3);
+                        long millis1 = date2.getTime();
+                        Woman woman = new Woman(name,surname,millis1,iq);
+
+                        System.out.println("Enter father name");
+                        String name1 = sc.nextLine();
+                        System.out.println("Enter father surname");
+                        String surname1 = sc.nextLine();
+                        System.out.println("Enter father birth year");
+                        int year1 = integ;
+                        System.out.println("Enter father birth month");
+                        int month1 = integ;
+                        System.out.println("Enter father birth day");
+                        int day1 = integ;
+                        System.out.println("Enter father iq");
+                        int iq1 = integ;
+
+                        String date = formatter.format(new Date(day1, month1, year1));
+                        Date date1 = formatter.parse(date);
+                        long millis = date1.getTime();
+                        Man man = new Man(name1,surname1,millis,iq1);
+
+                        System.out.println("New Family creating");
+                        familyController.createNewFamily(man, woman);
+
+                        break;
+                    case "7":
+                        System.out.println("Enter index number you want to delete");
+                        familyController.deleteFamily(integ);
+                        break;
+                    case "exit":
+                        System.out.println("Exiting");
+                        break;
+                    default:
+                        System.out.println("Enter correct number");
+                }
+            } while (input.equals("exit") );
+
 
         //familyController.displayAllFamilies();
 

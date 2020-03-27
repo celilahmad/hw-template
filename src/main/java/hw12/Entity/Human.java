@@ -198,7 +198,6 @@ public class Human {
 
     @Override
     public String toString() {
-
         return "name='" + name + '\'' +
                 ", surname='" + surname + '\''
                  + ", birthdate='" + birthYear() + '\''

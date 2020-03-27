@@ -5,6 +5,10 @@ import java.util.HashMap;
 
 public final class Man extends Human {
 
+    public Man(String name, String surname, long yearOfBirth, int iq) {
+        super(name, surname, yearOfBirth, iq);
+    }
+
     public Man(String name, String surname, long yearOfBirth, int iq, HashMap<String, String> schedule) {
         super(name, surname, yearOfBirth, iq, schedule);
     }

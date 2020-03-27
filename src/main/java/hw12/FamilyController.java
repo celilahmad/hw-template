@@ -70,6 +70,12 @@ public class FamilyController {
         }
     }
 
+    public void getFamiliesEqual(int count){
+        for (Family f : familyService.getFamiliesEqual(count)) {
+            System.out.println(f);
+        }
+    }
+
     public void countFamiliesWithMember(){
         for (Integer i : familyService.countFamiliesWithMember()){
             System.out.println(i);
