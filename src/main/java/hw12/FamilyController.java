@@ -57,7 +57,7 @@ public class FamilyController {
         System.out.println(familyService.saveFamily(fam));
     }
 
-    public void getFamiliesBiggerThan(int count) {
+    public void getFamiliesBiggerThan(int count) throws FamilyOverFlowException{
         for (Family f : familyService.getFamiliesBiggerThan(count)) {
             System.out.println(f);
         }
@@ -89,13 +89,13 @@ public class FamilyController {
 
     }
 
-    public void bornChild(Family newFamily1, String sex) {
+    public void bornChild(Family newFamily1, String sex) throws FamilyOverFlowException{
 
         System.out.println("New " + sex + " added to family");
         System.out.println(familyService.addChildToFamily(newFamily1, sex));
     }
 
-    public void adoptChild(Family newFamily1, Human child1) {
+    public void adoptChild(Family newFamily1, Human child1) throws FamilyOverFlowException{
         System.out.println(child1 + " adobted to \n" + newFamily1);
         System.out.println("Renewed \n" + familyService.adoptChild(newFamily1, child1));
     }
