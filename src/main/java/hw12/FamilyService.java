@@ -22,7 +22,7 @@ public class FamilyService {
         return dao.displayAllFamilies();
     }
 
-    public List<Family> getFamilyByIndex(int index) {
+    public Family getFamilyByIndex(int index) {
         return dao.getFamilyByIndex(index);
     }
 

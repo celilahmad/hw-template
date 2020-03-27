@@ -25,6 +25,22 @@ public class Human {
 
     }
 
+    public Human(String gender, String name, String surname ) {
+        this.gender = gender;
+        this.name = name;
+        this.surname = surname;
+
+    }
+
+    public Human(String gender, String name, String surname, long birthDateInMillis, int iq ) {
+        this.gender = gender;
+        this.name = name;
+        this.surname = surname;
+        this.birthDateInMillis = birthDateInMillis;
+        this.iq = iq;
+
+    }
+
     public Human(String name, String surname) {
         this.name = name;
         this.surname = surname;
@@ -189,10 +205,15 @@ public class Human {
     }
 
     public String birthYear(){
-        long birth = this.birthDateInMillis;
-        Date date = new Date(birth);
-        String format = formatter.format(date);
-        return format;
+        if (this.birthDateInMillis==0L){
+            return null;
+        }else{
+            long birth = this.birthDateInMillis;
+            Date date = new Date(birth);
+            String format = formatter.format(date);
+            return format;
+        }
+
     }
 
 

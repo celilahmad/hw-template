@@ -19,6 +19,7 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         FamilyController familyController = new FamilyController();
+        FamilyService familyService = new FamilyService();
 
         HashMap<String, String> sce = new HashMap<>();
         sce.put("Tuesday", "relax");
@@ -98,53 +99,19 @@ public class Main {
 
         Family family1 = new Family(1, new Man("Jack", "Stuard",3960000000L,88,newSchedule3),
                 new Woman("Michele", "Rodriguez",67032000000L,80,newSchedule4), familyChild1, familyPet1);
-
         Family family2 = new Family(2, new Man("Alan", "Walker",45864000000L, 90,newSchedule5),
                 new Woman("Adriana", "Lima",109022400000L, 85,newSchedule6), familyChild2, familyPet2);
         Family family3 = new Family(3, new Man("Michael", "Jackson",53812800000L, 99,newSchedule7),
                 new Woman("Nicky", "Minaj",180043200000L, 78,newSchedule8), familyChild3, familyPet3);
 
 
-        Human child7 = new Human("Jeremy", "Brown", 639428400000L,80);
-        Human child8 = new Human("Juan", "Naek", 723672000000L, 90);
-        List<Human> familyChild = new ArrayList<>(Arrays.asList(child7, child8));
-
-        HashMap<String, String> newSchedule9 = new HashMap<>();
-        newSchedule9.put("Thursday", "work");
-        HashMap<String, String> newSchedule10 = new HashMap<>();
-        newSchedule10.put("Wednesday", "basketball");
-        Family newFamily = new Family(4, new Woman("Giovanni", "Cupello",186177600000L, 10,newSchedule9),
-                new Man("Suu", "Lee",191188800000L,90, newSchedule10), familyChild);
-
-        HashMap<String, String> newSchedule = new HashMap<>();
-        newSchedule.put("Monday", "working");
-        HashMap<String, String> newSchedule1 = new HashMap<>();
-        newSchedule1.put("Friday", "fishing");
-
-        Human mother = new Human("Emily", "Blunt",153777600000L, 70, newSchedule);
-        Human father = new Human("Matt", "Damon",123105600000L, 80, newSchedule1);
-        Family newFamily1 = new Family(4,mother, father);
-
-        Set<String> schedule7 = new HashSet<>();
-        schedule7.add("playing");
-        Set<String> schedule8 = new HashSet<>();
-        schedule8.add("eating");
-        Pet fish2 = new Fish("Starfish", 1,schedule7);
-        Pet fish3 = new Fish("Nino", 1, schedule8);
-
-
-       /* familyController.save(family1);
-        familyController.save(family2);
-        familyController.save(family3);
-*/
-        System.out.println("------------------------");
-
         Scanner sc = new Scanner(System.in);
-        String input=sc.nextLine();
-        int integ = Integer.parseInt(sc.nextLine());
-            do {
+        familyController.menu();
+        String input;
+        boolean test = true;
+            while(test) {
 
-
+                input = sc.nextLine();
                 switch (input) {
                     case "1":
                         familyController.save(family1);
@@ -156,15 +123,15 @@ public class Main {
                         break;
                     case "3":
                         System.out.println("At least how many members in family you want?");
-                        familyController.getFamiliesBiggerThan(integ);
+                        familyController.getFamiliesBiggerThan(sc.nextInt());
                         break;
                     case "4":
                         System.out.println("Limit the familiy members with ");
-                        familyController.getFamiliesLessThan(integ);
+                        familyController.getFamiliesLessThan(sc.nextInt());
                         break;
                     case "5":
                         System.out.println("Found excat members of family");
-                        familyController.getFamiliesEqual(integ);
+                        familyController.getFamiliesEqual(sc.nextInt());
                         break;
                     case "6":
                         System.out.println("Enter mother name");
@@ -179,6 +146,7 @@ public class Main {
                         int day = sc.nextInt();
                         System.out.println("Enter mother iq");
                         int iq = sc.nextInt();
+                        sc.nextLine();
 
                         System.out.println("Enter father name");
                         String name1 = sc.nextLine();
@@ -193,124 +161,92 @@ public class Main {
                         System.out.println("Enter father iq");
                         int iq1 = sc.nextInt();
 
-                        //DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
-                        LocalDate dt1 = LocalDate.of(year,month,day);
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                        SimpleDateFormat sample = new SimpleDateFormat("yyyy/MM/dd");
+
+                        LocalDate dt1 = LocalDate.of(year, month, day);
                         String s1 = formatter.format(dt1);
-                        Date d1 =  formatter.parse(d1,formatter);
-                        long mil = d1.getTime();
+                        Date date = sample.parse(s1);
+                        long millis = date.getTime();
 
-
-                        LocalDate dt2 = LocalDate.of(year1,month1,day1);
+                        LocalDate dt2 = LocalDate.of(year1, month1, day1);
                         String s2 = formatter.format(dt2);
-                        Date d2 = (Date) formatter.parse(s2);
-                        long mil2 = d1.getTime();
+                        Date date1 = sample.parse(s2);
+                        long millis1 = date1.getTime();
 
-                        /*DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                        String date3 = formatter.format(new Date(day, month, year));
-                        Date date2 = formatter.parse(date3);
-                        long millis1 = date2.getTime();*/
-                        Woman woman = new Woman(name,surname,mil,iq);
-
-                        /*String date = formatter.format(new Date(day1, month1, year1));
-                        Date date1 = formatter.parse(date);
-                        long millis = date1.getTime();*/
-                        Man man = new Man(name1,surname1,mil2,iq1);
+                        Woman woman = new Woman(name, surname, millis, iq);
+                        Man man = new Man(name1, surname1, millis1, iq1);
 
                         System.out.println("New Family creating");
-                        familyController.createNewFamily(woman,man);
+                        familyController.createNewFamily(woman, man);
 
                         break;
                     case "7":
                         System.out.println("Enter index number you want to delete");
-                        familyController.deleteFamily(integ);
+                        familyController.deleteFamily(sc.nextInt());
+                        break;
+                    case "8":
+                        System.out.println("Enter 1 for birthChild, 2 for adopt child, 3 for main menu");
+                        int sel = sc.nextInt();
+                        if (sel == 1) {
+                            System.out.println("Enter family id");
+                            int i = sc.nextInt();
+                            sc.nextLine();
+                            familyController.getFamilyByIndex(i);
+                            System.out.println("Enter gender(boy or girl)");
+                            String gen = sc.nextLine();
+                            System.out.println("Enter name");
+                            String nameChild = sc.nextLine();
+                            System.out.println("Enter surname");
+                            String surnameChild = sc.nextLine();
+                            Human newHuman = new Child(gen, nameChild, surnameChild);
+                            familyController.familyService.getFamilyByIndex(i).addChild(newHuman);
+                            System.out.println("Added to family");
+                            familyController.getFamilyByIndex(i);
+                        } else if (sel == 2) {
+                            System.out.println("Enter family id");
+                            int i = sc.nextInt();
+                            sc.nextLine();
+                            familyController.getFamilyByIndex(i);
+                            System.out.println("Enter gender(boy or girl)");
+                            String gen = sc.nextLine();
+                            System.out.println("Enter name");
+                            String nameChild = sc.nextLine();
+                            System.out.println("Enter surname");
+                            String surnameChild = sc.nextLine();
+                            System.out.println("Enter birth date");
+                            String yaerChild = sc.nextLine();
+                            System.out.println("Enter iq");
+                            int iql = sc.nextInt();
+                            DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                            SimpleDateFormat sample1 = new SimpleDateFormat("yyyy/MM/dd");
+
+                            Date newDate = sample1.parse(yaerChild);
+                            long milli = newDate.getTime();
+                            Human hw = new Child(gen, nameChild, surnameChild,milli, iql);
+                            familyController.familyService.getFamilyByIndex(i).addChild(hw);
+                        } else if (sel == 3) {
+                            familyController.menu();
+                        } else {
+                            System.out.println("Enter correct number. Returning to main menu");
+                            familyController.menu();
+                        }
+                        break;
+
+                    case "9":
+                        System.out.println("Delete children bigger than");
+                        familyController.deleteAllChildrenOlderThan(sc.nextInt());
                         break;
                     case "exit":
                         System.out.println("Exiting");
+                        test=false;
                         break;
                     default:
                         System.out.println("Enter correct number");
                 }
-            } while (input.equals("exit") );
 
+            }
 
-        //familyController.displayAllFamilies();
-
-        //System.out.println("------------------------");
-
-        //familyController.getFamilyByIndex(2); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.save(newFamily); // dome
-
-        //System.out.println("------------------------");
-
-        //familyController.displayAllFamilies();
-
-        //familyController.deleteFamily(1); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.deleteFamily(family2); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.getFamiliesBiggerThan(3); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.getFamiliesLessThan(4); //done
-
-        //familyController.countFamiliesWithMember();
-
-        //System.out.println("------------------------");
-
-        //familyController.createNewFamily(mother, father); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.displayAllFamilies();
-
-        //System.out.println("------------------------");
-
-        //familyController.bornChild(newFamily1, "boy"); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.displayAllFamilies();
-
-        //System.out.println("------------------------");
-
-        //familyController.adoptChild(family2,child7); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.displayAllFamilies();
-
-        //familyController.deleteAllChildrenOlderThan(25); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.displayAllFamilies();
-
-        //familyController.count(); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.getPets(1); //done
-
-        //System.out.println("------------------------");
-
-       // familyController.addPets(2, fish2); //done
-
-        //System.out.println("------------------------");
-
-        //familyController.addPets(3, fish3); //done
-
-        //System.out.println("------------------------");
-
-       // familyController.displayAllFamilies();
 
     }
 }

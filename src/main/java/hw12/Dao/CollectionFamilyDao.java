@@ -30,8 +30,8 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
 
     @Override
-    public List<Family> getFamilyByIndex(int index) {
-        return getAllFamilies().stream().filter(s -> s.getId() == index).collect(Collectors.toList());
+    public Family getFamilyByIndex(int index) {
+        return getAllFamilies().stream().filter(s -> s.getId() == index).collect(Collectors.toList()).get(0);
     }
 
     @Override

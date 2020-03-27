@@ -12,7 +12,7 @@ public interface FamilyDao<Family> {
 
     List<Family> displayAllFamilies();
 
-    List<Family> getFamilyByIndex(int index);
+    Family getFamilyByIndex(int index);
 
     List<Family> deleteFamily(int index);
 

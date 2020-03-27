@@ -122,4 +122,17 @@ public class FamilyController {
         System.out.println("New pet added to family");
         System.out.println(familyService.addPets(i, pet));
     }
+
+    public void menu(){
+        System.out.println("1. Fill databese with sample date");
+        System.out.println("2. Display entire list of family");
+        System.out.println("3. Greater number of members");
+        System.out.println("4. Lower number of members");
+        System.out.println("5. Equals number of members");
+        System.out.println("6. Create new Family");
+        System.out.println("7. Delete family by index");
+        System.out.println("8. Edit family by index");
+        System.out.println("9. Remove all children older than");
+        System.out.println("exit");
+    }
 }

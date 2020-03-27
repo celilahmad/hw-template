@@ -5,7 +5,13 @@ import java.util.HashMap;
 
 public class Child extends Human{
 
+    public Child(String gender, String name, String surname) {
+        super(gender, name, surname);
+    }
 
+    public Child(String gender,String name, String surname, long yearOfBirth, int iq) {
+        super(gender, name, surname, yearOfBirth, iq);
+    }
 
     public Child(String gender,String name, String surname, long yearOfBirth, int iq, HashMap<String, String> schedule) {
         super(gender, name, surname, yearOfBirth, iq, schedule);
