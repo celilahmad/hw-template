@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         FamilyController familyController = new FamilyController();
-        FamilyService familyService = new FamilyService();
+
 
         HashMap<String, String> sce = new HashMap<>();
         sce.put("Tuesday", "relax");
