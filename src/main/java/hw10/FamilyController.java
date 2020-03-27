@@ -70,6 +70,12 @@ public class FamilyController {
         }
     }
 
+    public void countFamiliesWithMember(){
+        for (Integer i : familyService.countFamiliesWithMember()){
+            System.out.println(i);
+        }
+    }
+
     public void createNewFamily(Human mother, Human father) {
         Family fam = new Family(mother,father);
         familyService.saveFamily(fam);
