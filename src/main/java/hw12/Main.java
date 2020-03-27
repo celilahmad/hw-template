@@ -9,6 +9,8 @@ import hw12.Pet.Pet;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Main {
@@ -178,32 +180,45 @@ public class Main {
                         System.out.println("Enter mother iq");
                         int iq = sc.nextInt();
 
-                        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                        String date3 = formatter.format(new Date(day, month, year));
-                        Date date2 = formatter.parse(date3);
-                        long millis1 = date2.getTime();
-                        Woman woman = new Woman(name,surname,millis1,iq);
-
                         System.out.println("Enter father name");
                         String name1 = sc.nextLine();
                         System.out.println("Enter father surname");
                         String surname1 = sc.nextLine();
                         System.out.println("Enter father birth year");
-                        int year1 = integ;
+                        int year1 = sc.nextInt();
                         System.out.println("Enter father birth month");
-                        int month1 = integ;
+                        int month1 = sc.nextInt();
                         System.out.println("Enter father birth day");
-                        int day1 = integ;
+                        int day1 = sc.nextInt();
                         System.out.println("Enter father iq");
-                        int iq1 = integ;
+                        int iq1 = sc.nextInt();
 
-                        String date = formatter.format(new Date(day1, month1, year1));
+                        //DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+                        LocalDate dt1 = LocalDate.of(year,month,day);
+                        String s1 = formatter.format(dt1);
+                        Date d1 =  formatter.parse(d1,formatter);
+                        long mil = d1.getTime();
+
+
+                        LocalDate dt2 = LocalDate.of(year1,month1,day1);
+                        String s2 = formatter.format(dt2);
+                        Date d2 = (Date) formatter.parse(s2);
+                        long mil2 = d1.getTime();
+
+                        /*DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        String date3 = formatter.format(new Date(day, month, year));
+                        Date date2 = formatter.parse(date3);
+                        long millis1 = date2.getTime();*/
+                        Woman woman = new Woman(name,surname,mil,iq);
+
+                        /*String date = formatter.format(new Date(day1, month1, year1));
                         Date date1 = formatter.parse(date);
-                        long millis = date1.getTime();
-                        Man man = new Man(name1,surname1,millis,iq1);
+                        long millis = date1.getTime();*/
+                        Man man = new Man(name1,surname1,mil2,iq1);
 
                         System.out.println("New Family creating");
-                        familyController.createNewFamily(man, woman);
+                        familyController.createNewFamily(woman,man);
 
                         break;
                     case "7":
