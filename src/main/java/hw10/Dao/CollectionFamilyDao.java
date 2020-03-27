@@ -81,10 +81,10 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
 
 
     @Override
-    public Family adoptChild(Family familyTo, Family familyFrom, Human child) {
-        Family famFrom = getAllFamilies()
+    public Family adoptChild(Family familyTo, Human child) {
+       /* Family famFrom = getAllFamilies()
                 .stream().filter(m -> m.getMother() == familyFrom.getMother())
-                .collect(Collectors.toList()).get(0);
+                .collect(Collectors.toList()).get(0);*/
         Family famTo = getAllFamilies()
                 .stream().filter(m -> m.getMother() == familyTo.getMother())
                 .collect(Collectors.toList()).get(0);
@@ -95,7 +95,7 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
         }else{
             famTo.getChildren().add(child);
         }
-        famFrom.getChildren().remove(child);
+        //famFrom.getChildren().remove(child);
 
         return famTo;
     }

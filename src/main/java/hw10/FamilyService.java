@@ -59,8 +59,8 @@ public class FamilyService {
         return dao.addChild(newFamily, sex);
     }
 
-    public Family adoptChild(Family newFamily1,Family newFamily, Human child1) {
-        return dao.adoptChild(newFamily1, newFamily, child1);
+    public Family adoptChild(Family newFamily1, Human child1) {
+        return dao.adoptChild(newFamily1, child1);
     }
 
     public List<Family> deleteChildrenOlderThan(int i) {

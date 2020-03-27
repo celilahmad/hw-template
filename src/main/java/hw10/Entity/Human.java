@@ -13,8 +13,9 @@ public class Human {
     private String name;
     private String surname;
     private long birthDateInMillis;
-    private int iq = (int) (Math.random() * 100 + 1);
-    private Map<String, String> schedule = new HashMap<>();
+    //private int iq = (int) (Math.random() * 100 + 1);
+    private int iq;
+    private Map<String, String> schedule;
     private Family family;
 
     public Human() {
@@ -24,6 +25,16 @@ public class Human {
     public Human(String name, String surname) {
         this.name = name;
         this.surname = surname;
+    }
+
+    DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+    public Human(String name, String surname, long birthDateInMillis, int iq) {
+        this.name = name;
+        this.surname = surname;
+        this.birthDateInMillis = birthDateInMillis;
+
+        this.iq = iq;
     }
 
     public Human(String name, String surname, long birthDateInMillis) {
@@ -44,7 +55,7 @@ public class Human {
 
 
     public String describeAge(){
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
         Calendar calendar = Calendar.getInstance();
         long now = calendar.getTimeInMillis();
         long bithdate = this.birthDateInMillis;
@@ -86,7 +97,7 @@ public class Human {
             yearDay = dayNow-dayBirth;
         }
 
-        return String.format( "%d years %d months %d days old!", yearAge, yearMonth, yearDay);
+        return String.format( "%s is %d years %d months %d days old!",getName(), yearAge, yearMonth, yearDay);
     }
 
     public void greetPet(Pet pet) {
@@ -156,10 +167,20 @@ public class Human {
         this.family = family;
     }
 
+    public String birthYear(){
+        long birth = this.birthDateInMillis;
+        Date date = new Date(birth);
+        String format = formatter.format(date);
+        return format;
+    }
+
+
     @Override
     public String toString() {
+
         return "name='" + name + '\'' +
                 ", surname='" + surname + '\''
-                 + ", age='" + describeAge()+"\n";
+                 + ", age='" + birthYear() + '\''
+                + " iq='" + iq + "\n";
     }
 }

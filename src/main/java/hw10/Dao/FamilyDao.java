@@ -22,7 +22,7 @@ public interface FamilyDao<Family> {
 
     Family addChild(Family family, String sex);
 
-    Family adoptChild(Family familyTo, Family familyFrom, Human child);
+    Family adoptChild(Family familyTo, Human child);
 
     List<Family> deleteChildrenOlderThan(int i);
 
