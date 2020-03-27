@@ -18,6 +18,16 @@ public class FamilyController {
 
     }
 
+    public void displayAllFamilies() {
+        if (familyService.displayAllFamilies().isEmpty()){
+            System.out.println("Not any Family in List");
+        }
+        for (Family f : familyService.displayAllFamilies()) {
+            System.out.println(f);
+        }
+
+    }
+
     public void getFamilyByIndex(int i) {
         System.out.println(familyService.getFamilyByIndex(i));
     }

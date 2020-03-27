@@ -26,6 +26,12 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     }
 
     @Override
+    public List<Family> displayAllFamilies() {
+        return getAllFamilies().stream().collect(Collectors.toList());
+    }
+
+
+    @Override
     public List<Family> getFamilyByIndex(int index) {
         return getAllFamilies().stream().filter(s -> s.getId() == index).collect(Collectors.toList());
     }

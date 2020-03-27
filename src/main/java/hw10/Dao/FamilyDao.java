@@ -10,6 +10,8 @@ public interface FamilyDao<Family> {
 
     List<Family> getAllFamilies();
 
+    List<Family> displayAllFamilies();
+
     List<Family> getFamilyByIndex(int index);
 
     List<Family> deleteFamily(int index);
