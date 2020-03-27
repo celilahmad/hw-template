@@ -116,7 +116,7 @@ public class Main {
 
         //System.out.println("------------------------");
 
-        //familyController.adoptChild(newFamily1,newFamily ,child7); //done
+        //familyController.adoptChild(family1,child7); //done
 
         //System.out.println("------------------------");
 
