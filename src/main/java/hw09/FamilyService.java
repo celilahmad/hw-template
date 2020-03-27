@@ -8,6 +8,7 @@ import hw09.Pet.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class FamilyService {
@@ -18,28 +19,26 @@ public class FamilyService {
         return dao.getAllFamilies();
     }
 
+    public List<Family> displayAllFamilies() {
+        return dao.displayAllFamilies();
+    }
+
     public List<Family> getFamilyByIndex(int index) {
         return dao.getFamilyByIndex(index);
     }
 
     public List<Family> getFamiliesBiggerThan(int count) {
-        List<Family> bigger = new ArrayList<>();
-        for (Family f : getAllFamilies()) {
-            if (f.countFamily() > count) {
-                bigger.add(f);
-            }
-        }
-        return bigger;
+
+        return getAllFamilies().stream().filter(n->n.countFamily()>count).collect(Collectors.toList());
+
     }
 
     public List<Family> getFamiliesLessThan(int count) {
-        List<Family> lower = new ArrayList<>();
-        for (Family f : getAllFamilies()) {
-            if (f.countFamily() < count) {
-                lower.add(f);
-            }
-        }
-        return lower;
+        return getAllFamilies().stream().filter(n->n.countFamily()<count).collect(Collectors.toList());
+    }
+
+    public List<Integer> countFamiliesWithMember(){
+        return getAllFamilies().stream().map(Family::countFamily).collect(Collectors.toList());
     }
 
     public List<Family> deleteFamily(int index) {

@@ -11,6 +11,7 @@ import java.util.List;
 
 public class FamilyController {
     FamilyService familyService = new FamilyService();
+    Family fam = new Family();
 
 
     public void getAllFamilies() {
@@ -18,6 +19,16 @@ public class FamilyController {
             System.out.println("Not any Family in List");
         }
         for (Family f : familyService.getAllFamilies()) {
+            System.out.println(f);
+        }
+
+    }
+
+    public void displayAllFamilies() {
+        if (familyService.displayAllFamilies().isEmpty()){
+            System.out.println("Not any Family in List");
+        }
+        for (Family f : familyService.displayAllFamilies()) {
             System.out.println(f);
         }
 
@@ -62,6 +73,12 @@ public class FamilyController {
     public void getFamiliesLessThan(int count) {
         for (Family f : familyService.getFamiliesLessThan(count)) {
             System.out.println(f);
+        }
+    }
+
+    public void countFamiliesWithMember(){
+        for (Integer i : familyService.countFamiliesWithMember()){
+            System.out.println(i);
         }
     }
 

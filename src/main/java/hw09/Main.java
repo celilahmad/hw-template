@@ -70,7 +70,7 @@ public class Main {
 
         System.out.println("------------------------");
 
-        familyController.getAllFamilies();
+        familyController.displayAllFamilies();
 
         System.out.println("------------------------");
 
@@ -82,7 +82,7 @@ public class Main {
 
         //System.out.println("------------------------");
 
-        //familyController.getAllFamilies();
+        //familyController.displayAllFamilies();
 
         //familyController.deleteFamily(1); //done
 
@@ -98,13 +98,15 @@ public class Main {
 
         //familyController.getFamiliesLessThan(4); //done
 
+        //familyController.countFamiliesWithMember();
+
         //System.out.println("------------------------");
 
         //familyController.createNewFamily(mother, father); //done
 
         //System.out.println("------------------------");
 
-        //familyController.getAllFamilies();
+        //familyController.displayAllFamilies();
 
         //System.out.println("------------------------");
 
@@ -112,7 +114,7 @@ public class Main {
 
         //System.out.println("------------------------");
 
-        //familyController.getAllFamilies();
+        //familyController.displayAllFamilies();
 
         //System.out.println("------------------------");
 
@@ -120,13 +122,13 @@ public class Main {
 
         //System.out.println("------------------------");
 
-        //familyController.getAllFamilies();
+        //familyController.displayAllFamilies();
 
         //familyController.deleteAllChildrenOlderThan(25); //done
 
         //System.out.println("------------------------");
 
-        //familyController.getAllFamilies();
+        //familyController.displayAllFamilies();
 
         //familyController.count(); //done
 
@@ -144,7 +146,7 @@ public class Main {
 
         //System.out.println("------------------------");
 
-       // familyController.getAllFamilies();
+       // familyController.displayAllFamilies();
 
     }
 }
