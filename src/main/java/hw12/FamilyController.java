@@ -64,13 +64,13 @@ public class FamilyController {
 
     }
 
-    public void getFamiliesLessThan(int count) {
+    public void getFamiliesLessThan(int count) throws FamilyOverFlowException{
         for (Family f : familyService.getFamiliesLessThan(count)) {
             System.out.println(f);
         }
     }
 
-    public void getFamiliesEqual(int count){
+    public void getFamiliesEqual(int count)throws FamilyOverFlowException{
         for (Family f : familyService.getFamiliesEqual(count)) {
             System.out.println(f);
         }
