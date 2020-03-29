@@ -10,9 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FamilyController {
-    FamilyService familyService = new FamilyService();
-    Family fam = new Family();
 
+    private FamilyService familyService = new FamilyService();
 
     public void getAllFamilies() {
         if (familyService.getAllFamilies().isEmpty()){
