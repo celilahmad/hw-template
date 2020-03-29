@@ -5,6 +5,9 @@ import hw10.Pet.Pet;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
@@ -56,48 +59,9 @@ public class Human {
 
     public String describeAge(){
 
-        Calendar calendar = Calendar.getInstance();
-        long now = calendar.getTimeInMillis();
-        long bithdate = this.birthDateInMillis;
+        return Instant.ofEpochMilli(this.birthDateInMillis).atZone(ZoneId.systemDefault()).
+                toLocalDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-        Date date1 = new Date(now);
-        String dateNow = formatter.format(date1);
-
-        String array2[]= dateNow.split("/");
-        int dayNow= Integer.parseInt(array2[0]);
-        int montNow = Integer.parseInt(array2[1]);
-        int yearNow = Integer.parseInt(array2[2]);
-
-
-        Date date = new Date(bithdate);
-        String birt = formatter.format(date);
-
-        String array3[]= birt.split("/");
-        int dayBirth= Integer.parseInt(array3[0]);
-        int montBirth = Integer.parseInt(array3[1]);
-        int yearBirth = Integer.parseInt(array3[2]);
-
-        int yearAge;
-        int yearMonth;
-        int yearDay;
-
-        yearAge= yearNow-yearBirth;
-
-        if (montNow-montBirth<0){
-            yearAge--;
-            yearMonth=montBirth+montNow;
-        }else{
-            yearMonth=montNow+montBirth;
-        }
-
-        if (dayNow-dayBirth<0){
-            yearMonth--;
-            yearDay=30-(montBirth-montNow);
-        }else{
-            yearDay = dayNow-dayBirth;
-        }
-
-        return String.format( "%s is %d years %d months %d days old!",getName(), yearAge, yearMonth, yearDay);
     }
 
     public void greetPet(Pet pet) {

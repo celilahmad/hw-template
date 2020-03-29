@@ -5,7 +5,7 @@ import hw10.Entity.Human;
 import hw10.Pet.Pet;
 
 public class FamilyController {
-    FamilyService familyService = new FamilyService();
+    private FamilyService familyService = new FamilyService();
 
 
     public void getAllFamilies() {
@@ -33,7 +33,7 @@ public class FamilyController {
     }
 
     public void deleteFamily(int i) {
-        if (familyService.dao.getAllFamilies().stream().anyMatch(p->p.getId()==i)){
+        if (familyService.getAllFamilies().stream().anyMatch(p->p.getId()==i)){
             System.out.println("Family index number " + i + " deleting!");
             System.out.println("Remaining families:");
             for (Family f : familyService.deleteFamily(i)) {

@@ -18,7 +18,7 @@ public class CollectionFamilyDao implements FamilyDao<Family> {
     List<Human> newboy = new ArrayList<>(Arrays.asList(boy));
     List<Human> newgirl = new ArrayList<>(Arrays.asList(girl));
 
-    List<Family> families = new ArrayList<>();
+    private List<Family> families = new ArrayList<>();
 
     @Override
     public List<Family> getAllFamilies() {
