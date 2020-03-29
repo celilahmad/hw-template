@@ -1,17 +1,14 @@
-package hw09;
+package hw13;
 
-import hw09.Entity.Family;
-import hw09.Entity.Human;
-import hw09.Pet.Fish;
-import hw09.Pet.Pet;
+import hw13.Entity.Family;
+import hw13.Entity.Human;
+import hw13.Pet.Pet;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.IOException;
 
 public class FamilyController {
+    FamilyService familyService = new FamilyService();
 
-    private FamilyService familyService = new FamilyService();
 
     public void getAllFamilies() {
         if (familyService.getAllFamilies().isEmpty()){
@@ -38,7 +35,7 @@ public class FamilyController {
     }
 
     public void deleteFamily(int i) {
-        if (familyService.getAllFamilies().stream().anyMatch(p->p.getId()==i)){
+        if (familyService.dao.getAllFamilies().stream().anyMatch(p->p.getId()==i)){
             System.out.println("Family index number " + i + " deleting!");
             System.out.println("Remaining families:");
             for (Family f : familyService.deleteFamily(i)) {
@@ -57,20 +54,26 @@ public class FamilyController {
         }
     }
 
-    public void save(Family fam){
+    public void save(Family fam) throws IOException {
         System.out.println("Saving");
         System.out.println(familyService.saveFamily(fam));
     }
 
-    public void getFamiliesBiggerThan(int count) {
+    public void getFamiliesBiggerThan(int count) throws FamilyOverFlowException {
         for (Family f : familyService.getFamiliesBiggerThan(count)) {
             System.out.println(f);
         }
 
     }
 
-    public void getFamiliesLessThan(int count) {
+    public void getFamiliesLessThan(int count) throws FamilyOverFlowException {
         for (Family f : familyService.getFamiliesLessThan(count)) {
+            System.out.println(f);
+        }
+    }
+
+    public void getFamiliesEqual(int count)throws FamilyOverFlowException {
+        for (Family f : familyService.getFamiliesEqual(count)) {
             System.out.println(f);
         }
     }
@@ -81,21 +84,21 @@ public class FamilyController {
         }
     }
 
-    public void createNewFamily(Human mother, Human father) {
+    public void createNewFamily(Human mother, Human father) throws IOException {
         Family fam = new Family(mother,father);
         familyService.saveFamily(fam);
         System.out.println(fam);
 
     }
 
-    public void bornChild(Family newFamily1, String sex) {
+    public void bornChild(Family newFamily1, String sex) throws FamilyOverFlowException {
 
         System.out.println("New " + sex + " added to family");
         System.out.println(familyService.addChildToFamily(newFamily1, sex));
     }
 
-    public void adoptChild(Family newFamily1, Human child1) {
-        System.out.println(child1 + " adopted to \n" + newFamily1);
+    public void adoptChild(Family newFamily1, Human child1) throws FamilyOverFlowException {
+        System.out.println(child1 + " adobted to \n" + newFamily1);
         System.out.println("Renewed \n" + familyService.adoptChild(newFamily1, child1));
     }
 
@@ -120,5 +123,18 @@ public class FamilyController {
     public void addPets(int i, Pet pet) {
         System.out.println("New pet added to family");
         System.out.println(familyService.addPets(i, pet));
+    }
+
+    public void menu(){
+        System.out.println("1. Fill databese with sample date");
+        System.out.println("2. Display entire list of family");
+        System.out.println("3. Greater number of members");
+        System.out.println("4. Lower number of members");
+        System.out.println("5. Equals number of members");
+        System.out.println("6. Create new Family");
+        System.out.println("7. Delete family by index");
+        System.out.println("8. Edit family by index");
+        System.out.println("9. Remove all children older than");
+        System.out.println("exit");
     }
 }

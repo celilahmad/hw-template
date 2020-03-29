@@ -1,19 +1,19 @@
-package hw09;
+package hw13;
 
-import hw09.Dao.CollectionFamilyDao;
-import hw09.Dao.FamilyDao;
-import hw09.Entity.Family;
-import hw09.Entity.Human;
-import hw09.Pet.Pet;
+import hw13.Dao.CollectionFamilyDao;
+import hw13.Dao.FamilyDao;
+import hw13.Entity.Family;
+import hw13.Entity.Human;
+import hw13.Pet.Pet;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 
 public class FamilyService {
-
-    private FamilyDao<Family> dao = new CollectionFamilyDao();
+    FamilyDao<Family> dao = new CollectionFamilyDao("families.txt");
 
 
     public List<Family> getAllFamilies() {
@@ -24,7 +24,7 @@ public class FamilyService {
         return dao.displayAllFamilies();
     }
 
-    public List<Family> getFamilyByIndex(int index) {
+    public Family getFamilyByIndex(int index) {
         return dao.getFamilyByIndex(index);
     }
 
@@ -36,6 +36,10 @@ public class FamilyService {
 
     public List<Family> getFamiliesLessThan(int count) {
         return getAllFamilies().stream().filter(n->n.countFamily()<count).collect(Collectors.toList());
+    }
+
+    public List<Family> getFamiliesEqual(int count) {
+        return getAllFamilies().stream().filter(n->n.countFamily()==count).collect(Collectors.toList());
     }
 
     public List<Integer> countFamiliesWithMember(){
@@ -50,7 +54,7 @@ public class FamilyService {
         return dao.deleteFamily(family);
     }
 
-    public Family saveFamily(Family family) {
+    public Family saveFamily(Family family) throws IOException {
         return dao.saveFamily(family);
 
     }
@@ -78,6 +82,4 @@ public class FamilyService {
     public Family addPets(int i, Pet pet) {
         return dao.addPets(i, pet);
     }
-
-
 }
