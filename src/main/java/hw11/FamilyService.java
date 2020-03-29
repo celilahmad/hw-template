@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 
 public class FamilyService {
-    FamilyDao<Family> dao = new CollectionFamilyDao();
+    private FamilyDao<Family> dao = new CollectionFamilyDao();
 
 
     public List<Family> getAllFamilies() {

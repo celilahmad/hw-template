@@ -47,13 +47,10 @@ public class Family {
 
     }
 
-    int x = 0;
 
     public List<Human> addChild(Human h) {
-        for (int i = x; i < x + 1; i++) {
-            children.add(x, h);
-        }
-        x++;
+
+        children.add(h);
         return children;
     }
 
