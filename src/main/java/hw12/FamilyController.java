@@ -135,4 +135,8 @@ public class FamilyController {
         System.out.println("9. Remove all children older than");
         System.out.println("exit");
     }
+
+    public FamilyService getFamilyService() {
+        return familyService;
+    }
 }

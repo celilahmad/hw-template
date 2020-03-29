@@ -199,7 +199,7 @@ public class Main {
                         System.out.println("Enter surname");
                         String surnameChild = sc.nextLine();
                         Human newHuman = new Child(gen, nameChild, surnameChild);
-                        familyController.familyService.getFamilyByIndex(i).addChild(newHuman);
+                        familyController.getFamilyService().getFamilyByIndex(i).addChild(newHuman);
                         System.out.println("Added to family");
                         familyController.getFamilyByIndex(i);
                     } else if (sel == 2) {
@@ -223,7 +223,7 @@ public class Main {
                         Date newDate = sample1.parse(yaerChild);
                         long milli = newDate.getTime();
                         Human hw = new Child(gen, nameChild, surnameChild, milli, iql);
-                        familyController.familyService.getFamilyByIndex(i).addChild(hw);
+                        familyController.getFamilyService().getFamilyByIndex(i).addChild(hw);
                     } else if (sel == 3) {
                         familyController.menu();
                     } else {
